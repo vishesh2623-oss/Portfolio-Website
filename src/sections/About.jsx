@@ -20,19 +20,19 @@ const About = () => {
   />
 
           <div className="z-10 p-2 sm:p-4">
-            <p className="headtext">Hi, I'm Mathesh</p>
+            <p className="headtext">Hi, I'm Vishesh R S </p>
             <p className="subtext">
               As a B.E. Mechanical Engineering student at SKCET, I focus on
               transforming theoretical physics into practical, functional
-              designs using advanced CAD and CFD tools.
+              designs using advanced CAD tools.
             </p>
 
             {/* Download Resume Button */}
             <div className="mt-4">
               <a
-                href="/assets/projects/Mathesh_Resume.pdf"
-                download="Mathesh_Resume.pdf"
-                className="inline-block px-6 py-2.5 bg-[#4ade80] hover:bg-[#3bcf6e] text-black font-semibold rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.4)] hover:shadow-[0_0_25px_rgba(74,222,128,0.6)] cursor-pointer text-center text-sm"
+                href="/assets/projects/vishesh_resume.pdf"
+                download="vishesh_resume.pdf"
+                className="inline-block px-6 py-2.5 bg-[#4ade80]/10 hover:bg-[#4ade80] text-[#4ade80] hover:text-black font-medium text-sm rounded-xl border border-[#4ade80]/30 hover:border-[#4ade80] backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(74,222,128,0.15)] hover:shadow-[0_0_25px_rgba(74,222,128,0.4)] cursor-pointer text-center"
               >
                 Download Resume
               </a>
@@ -99,7 +99,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
             <p className="subtext">
-              I am based in India and I am highly open to remote design work,
+              I am an Indian and I am highly open to remote design work,
               internships, and collaborative engineering projects worldwide.
             </p>
           </div>
@@ -123,7 +123,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Engineering Software & Tools</p>
             <p className="subtext">
-             I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360, Solid Edge, and ANSYS Fluent—validating stress, dynamics, and fluid flow before production.
+             I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360 and Solid Edge.
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">

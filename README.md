@@ -1,4 +1,4 @@
-# 🚀 3D Engineering & Developer Portfolio | Mathesh S.
+# 🚀 3D Engineering & Developer Portfolio | Vishesh R S .
 
 A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects — designed to creatively showcase my skills in mechanical design, CAD modeling, simulations, and software development.
 

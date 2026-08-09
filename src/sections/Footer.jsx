@@ -4,7 +4,7 @@ const socialLinks = [
   {
     id: 1,
     name: "GitHub",
-    link: "https://github.com/Matheshs777",
+    link: "https://github.com/vishesh2623-oss",
     hoverClass: "hover:border-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.6)]",
     icon: (
       <svg className="w-7 h-7 fill-white group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
@@ -15,7 +15,7 @@ const socialLinks = [
   {
     id: 2,
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/mathesh-s-598ab7367",
+    link: "https://www.linkedin.com/in/vishesh-r-s-a1bb1b356/",
     hoverClass: "hover:border-sky-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.6)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@ const socialLinks = [
   {
     id: 3,
     name: "Instagram",
-    link: "https://www.instagram.com/mathesh_x_7?igsh=MWk3ejQ5MTBmZmNrZg%3D%3D",
+    link: "https://www.instagram.com/vishesh_2610/",
     hoverClass: "hover:border-pink-500 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ const socialLinks = [
   {
     id: 4,
     name: "Gmail",
-    link: "mailto:matheshs777@gmail.com",
+    link: "mailto:vishesh2623@gmail.com",
     hoverClass: "hover:border-red-500 hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
@@ -97,7 +97,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-neutral-400 text-xs sm:text-sm text-center">
-          © {new Date().getFullYear()} Mathesh S. All rights reserved.
+          © {new Date().getFullYear()} Vishesh R S . All rights reserved.
         </p>
 
       </div>

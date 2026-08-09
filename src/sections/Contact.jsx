@@ -67,7 +67,7 @@ const Contact = () => {
         <div className="flex flex-col items-start w-full gap-5 mb-10">
           <h2 className="text-heading">Let's Talk</h2>
           <p className="font-normal text-neutral-400">
-            Whether you're looking to collaborate on mechanical design, CAD modeling, FEA/CFD simulations, or engineering projects, I'm here to help.
+            Whether you're looking to collaborate on mechanical design, CAD modeling or engineering projects, I'm here to help.
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const Contact = () => {
               name="name"
               type="text"
               className="field-input field-input-focus"
-              placeholder="John Doe"
+              placeholder="Enter you name"
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
@@ -96,7 +96,7 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="JohnDoe@email.com"
+              placeholder="Enter mail id"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
