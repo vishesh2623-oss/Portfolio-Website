@@ -14,7 +14,7 @@ const App = () => {
       <Navbar />
 
       <section id="home">
-        <Hero />
+        <HeroText />
       </section>
 
       <section id="about">
