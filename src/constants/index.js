@@ -316,13 +316,13 @@ export const reviews = [
   {
     name: "Academic Peer",
     username: "@skcet_colleague",
-    body: "Mathesh demonstrates a deep understanding of mechanical design principles. His 3D modeling skills in SolidWorks are exceptionally precise.",
+    body: "Vishesh demonstrates a deep understanding of mechanical design principles. His 3D modeling skills in SolidWorks are exceptionally precise.",
     img: "https://robohash.org/skcet1",
   },
   {
     name: "Project Advisor",
     username: "@advisor",
-    body: "Excellent work on the CFD analysis. The attention to detail in the fluid flow simulations was thorough and highly accurate.",
+    body: "Excellent work on the CAD analysis. The attention to detail in the simulations was thorough and highly accurate.",
     img: "https://robohash.org/advisor1",
   },
   {
