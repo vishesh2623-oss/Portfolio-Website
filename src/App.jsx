@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./sections/Navbar";
+import HomePage from './sections/Home';
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Credentials from "./sections/Credentials";
@@ -12,6 +13,9 @@ const App = () => {
   return (
     <div className="container mx-auto max-w-7xl">
       <Navbar />
+      <section id="home">
+        <HomePage />
+      </section>
 
       <section id="about">
         <About />
