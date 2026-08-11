@@ -48,15 +48,10 @@ const socialLinks = [
     hoverClass: "hover:border-red-500 hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
-        {/* Blue Left Leg */}
         <path fill="#4285F4" d="M2.25 18.75v-9.375l4.5 3.375v8.25H3.75A1.5 1.5 0 0 1 2.25 18.75Z" />
-        {/* Green Right Leg */}
         <path fill="#34A853" d="M21.75 18.75v-9.375l-4.5 3.375v8.25h3A1.5 1.5 0 0 0 21.75 18.75Z" />
-        {/* Yellow Top-Right Fold */}
         <path fill="#FBBC04" d="M21.75 9.375V5.25A1.5 1.5 0 0 0 19.33 4.2L17.25 5.75v7z" />
-        {/* Dark Red Top-Left Fold (This was the missing piece!) */}
         <path fill="#C5221F" d="M2.25 9.375V5.25A1.5 1.5 0 0 1 4.67 4.2L6.75 5.75v7z" />
-        {/* Red Center Arch */}
         <path fill="#EA4335" d="M6.75 12.75 12 16.5l5.25-3.75v-7L12 9.5l-5.25-3.75z" />
       </svg>
     ),
@@ -64,13 +59,37 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const openTermsModal = (e) => {
+    e.preventDefault();
+
+    const width = 700;
+    const height = 800;
+    const left = (window.innerWidth - width) / 2 + window.screenX;
+    const top = (window.innerHeight - height) / 2 + window.screenY;
+
+    const popup = window.open(
+      "/terms.pdf",
+      "TermsAndConditions",
+      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+    );
+
+    // Fallback: If browser blocks popup, open in new tab instead
+    if (!popup || popup.closed || typeof popup.closed === "undefined") {
+      window.open("/terms.pdf", "_blank");
+    }
+  };
+
   return (
     <footer className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-black/40 backdrop-blur-md">
       <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 max-w-7xl mx-auto">
         
         {/* Links */}
         <div className="flex gap-2 text-neutral-400 text-xs sm:text-sm">
-          <a href="#" className="hover:text-white transition-colors duration-300">
+          <a
+            href="/terms.pdf"
+            onClick={openTermsModal}
+            className="hover:text-white transition-colors duration-300 cursor-pointer"
+          >
             Terms & Conditions
           </a>
           <span>|</span>
