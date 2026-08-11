@@ -14,6 +14,7 @@ const Credentials = () => {
     "/assets/projects/ibm.jpg",
     "/assets/projects/nptel.jpg",
     "/assets/projects/claude.jpg",
+    "/assets/projects/drug-pledge.pdf",
   ];
 
   const achievements = [
