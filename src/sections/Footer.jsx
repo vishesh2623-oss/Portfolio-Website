@@ -59,7 +59,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-  const openTermsModal = (e) => {
+  // Helper function to open PDF popups
+  const openPdfModal = (e, pdfPath, windowTitle) => {
     e.preventDefault();
 
     const width = 700;
@@ -68,14 +69,14 @@ const Footer = () => {
     const top = (window.innerHeight - height) / 2 + window.screenY;
 
     const popup = window.open(
-      "/terms.pdf",
-      "TermsAndConditions",
+      pdfPath,
+      windowTitle,
       `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
     );
 
-    // Fallback: If browser blocks popup, open in new tab instead
+    // Fallback if browser blocks popup
     if (!popup || popup.closed || typeof popup.closed === "undefined") {
-      window.open("/terms.pdf", "_blank");
+      window.open(pdfPath, "_blank");
     }
   };
 
@@ -87,13 +88,17 @@ const Footer = () => {
         <div className="flex gap-2 text-neutral-400 text-xs sm:text-sm">
           <a
             href="/terms.pdf"
-            onClick={openTermsModal}
+            onClick={(e) => openPdfModal(e, "/terms.pdf", "TermsAndConditions")}
             className="hover:text-white transition-colors duration-300 cursor-pointer"
           >
             Terms & Conditions
           </a>
           <span>|</span>
-          <a href="#" className="hover:text-white transition-colors duration-300">
+          <a
+            href="/privacy.pdf"
+            onClick={(e) => openPdfModal(e, "/privacy.pdf", "PrivacyPolicy")}
+            className="hover:text-white transition-colors duration-300 cursor-pointer"
+          >
             Privacy Policy
           </a>
         </div>
