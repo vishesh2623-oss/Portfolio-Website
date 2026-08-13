@@ -16,6 +16,7 @@ const Credentials = () => {
     "/assets/projects/claude.jpg",
     "/assets/projects/sketching.jpg",
     "/assets/projects/drug-pledge.jpg",
+    "/assets/projects/janatics.jpg",
   ];
 
   const achievements = [
