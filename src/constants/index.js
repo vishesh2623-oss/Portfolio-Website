@@ -23,6 +23,27 @@ export const myProjects = [
   },
   {
     id: 2,
+    title: "Francis Turbine Step Casing",
+    description:
+      "Francis Turbine: A reaction turbine used to convert hydraulic energy into mechanical energy.",
+    subDescription: [
+      "Compact 3D model showing the turbine casing and internal arrangement.",
+      "Step-wise casing design represents controlled water flow through the turbine.",
+      "Designed for educational and engineering visualization purposes."
+    ],
+    href: "https://sketchfab.com/3d-models/part1-1ff803a077f94370856809ba9f5bd8a4",
+    logo: "/assets/logos/solidworks.png",
+    image: "/assets/projects/francis.png",
+    tags: [
+      {
+        id: 1,
+        name: "SolidWorks",
+        path: "/assets/logos/solidworks.png",
+      }
+    ],
+  },
+  {
+    id: 3,
     title: " Cylinder ",
     description:
       "High-Strength Cylindrical Concrete Unit . ",
@@ -31,18 +52,18 @@ export const myProjects = [
       "Manufactured using high-quality materials to meet the demanding requirements of modern construction and infrastructure projects.",
     ],
     href: "https://sketchfab.com/3d-models/part2-b839d3e1d86746029738cca7efa11b95?utm_medium=embed&utm_campaign=share-popup&utm_content=b839d3e1d86746029738cca7efa11b95",
-    logo: "/assets/logos/soildedge.svg",
+    logo: "/assets/logos/solidedge.svg",
     image: "/assets/projects/cylinder.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/soildedge.svg",
+        path: "/assets/logos/solidedge.svg",
       }
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Block",
     description:
       "Premium Solid Concrete Block.",
@@ -62,7 +83,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: " Concrete Cone ",
     description:
       "Precision Cast Concrete Cone . ",
@@ -83,7 +104,7 @@ export const myProjects = [
     
   },
   {
-    id: 5,
+    id: 6,
     title: " Clevis Bracket ",
     description:
       "Precision Engineered Mounting Bracket",
@@ -103,7 +124,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "V-Block",
     description:
       "A 3D CAD model of a mechanical V-block used for supporting cylindrical workpieces.",
@@ -124,7 +145,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Combination Wrench",
     description:
       "A 3D CAD model of a hand tool designed for gripping and turning fasteners.",
@@ -145,7 +166,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Slotted Mounting Bracket",
     description:
       "A 3D CAD model of an asymmetric mechanical mounting block used for component positioning.",
@@ -166,7 +187,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Angle Mounting Bracket",
     description:
       "A 3D CAD model of an L-shaped mechanical mounting bracket used to secure components at a right angle.",
@@ -187,7 +208,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: "Pillow Block",
     description:
       "A 3D CAD model of a mechanical pivot bracket used for supporting shafts or pin connections.",
@@ -208,7 +229,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     title: "Ribbed Support Bracket",
     description:
       "A 3D CAD model of a heavy-duty structural mounting bracket used for elevated support.",
@@ -229,7 +250,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     title: "Gusseted Angle Bracket",
     description:
       "A 3D CAD model of a right-angle mechanical bracket designed for rigid structural support.",
@@ -250,7 +271,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 13,
+    id: 14,
     title: "Bearing Cap",
     description:
       "A 3D CAD model of an arched clamp bracket used to retain shafts or cylindrical components.",
