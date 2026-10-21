@@ -303,7 +303,7 @@ export const myProjects = [
     ],
     href: "https://sketchfab.com/3d-models/part12-80eb96c2c08b43589f3b88a746df687e?utm_medium=embed&utm_campaign=share-popup&utm_content=80eb96c2c08b43589f3b88a746df687e",
     logo: "/assets/logos/soildworkslogo.svg",
-    image: "/assets/projects/OPEN VIEW.jpg",
+    image: "/assets/projects/sih1.jpg",
     tags: [
       {
         id: 1,
