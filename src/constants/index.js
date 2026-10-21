@@ -32,13 +32,13 @@ export const myProjects = [
       "Designed for educational and engineering visualization purposes."
     ],
     href: "https://sketchfab.com/3d-models/part1-1ff803a077f94370856809ba9f5bd8a4",
-    logo: "/assets/logos/solidworks.png",
+    logo: "/assets/logos/soildworks.png",
     image: "/assets/projects/francis.png",
     tags: [
       {
         id: 1,
         name: "SolidWorks",
-        path: "/assets/logos/solidworks.png",
+        path: "/assets/logos/soildworks.png",
       }
     ],
   },
@@ -52,13 +52,13 @@ export const myProjects = [
       "Manufactured using high-quality materials to meet the demanding requirements of modern construction and infrastructure projects.",
     ],
     href: "https://sketchfab.com/3d-models/part2-b839d3e1d86746029738cca7efa11b95?utm_medium=embed&utm_campaign=share-popup&utm_content=b839d3e1d86746029738cca7efa11b95",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/cylinder.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       }
     ],
   },
@@ -72,13 +72,13 @@ export const myProjects = [
       "Designed to meet the highest industry standards for residential, commercial, and infrastructure applications.",
     ],
     href: "https://sketchfab.com/3d-models/part1-e4ce0d290d9848a7924d324e2a375329?utm_medium=embed&utm_campaign=share-popup&utm_content=e4ce0d290d9848a7924d324e2a375329",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/block1.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       }
     ],
   },
@@ -92,13 +92,13 @@ export const myProjects = [
       "Ideal for modern civil engineering and infrastructure solutions.",
     ],
     href: "https://sketchfab.com/3d-models/part3-e6748a6e7559489993a206a0583a454c?utm_medium=embed&utm_campaign=share-popup&utm_content=e6748a6e7559489993a206a0583a454c",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/concrete.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       }
     ],
     
@@ -113,13 +113,13 @@ export const myProjects = [
       "Manufactured using premium-grade materials and precision machining for long-lasting durability.",
     ],
     href: "https://sketchfab.com/3d-models/part4-46f7bcce7efb42f5bcabf34c1b5c573c?utm_medium=embed&utm_campaign=share-popup&utm_content=46f7bcce7efb42f5bcabf34c1b5c573c",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/clevisbracket.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -134,13 +134,13 @@ export const myProjects = [
       "Rendered in a solid gray isometric view.",
     ],
     href: "https://sketchfab.com/3d-models/part5-1f2784ba3c7d4437a9637b6347d4f70a?utm_medium=embed&utm_campaign=share-popup&utm_content=1f2784ba3c7d4437a9637b6347d4f70a",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/v block.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -155,13 +155,13 @@ export const myProjects = [
       "Rendered in a solid gray isometric view.",
     ],
     href: "https://sketchfab.com/3d-models/part6-37f90bafdd7143b0b183e4c9fa11df90?utm_medium=embed&utm_campaign=share-popup&utm_content=37f90bafdd7143b0b183e4c9fa11df90",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/wrench.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -176,13 +176,13 @@ export const myProjects = [
       "Rendered in a solid gray isometric view.",
     ],
     href: "https://sketchfab.com/3d-models/part7-e9dff48a42b84ce3b663e75d8096ef66?utm_medium=embed&utm_campaign=share-popup&utm_content=e9dff48a42b84ce3b663e75d8096ef66",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/slotted.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -197,13 +197,13 @@ export const myProjects = [
       "Rendered in a solid gray isometric view.",
     ],
     href: "https://sketchfab.com/3d-models/part8-b89838f197764c4fa92a7ad9e52c064c?utm_medium=embed&utm_campaign=share-popup&utm_content=b89838f197764c4fa92a7ad9e52c064c",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/angularmount.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -218,13 +218,13 @@ export const myProjects = [
       "Rendered in a solid gray isometric view with a recessed bottom profile.",
     ],
     href: "https://sketchfab.com/3d-models/part9-e757c810cda04a7689c69b47d65af52e?utm_medium=embed&utm_campaign=share-popup&utm_content=e757c810cda04a7689c69b47d65af52e",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/pillow.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -239,13 +239,13 @@ export const myProjects = [
       "Includes side flanges with pre-drilled mounting holes for secure attachment.",
     ],
     href: "https://sketchfab.com/3d-models/part10-2d3d083498f844d6a505271a40cafd68?utm_medium=embed&utm_campaign=share-popup&utm_content=2d3d083498f844d6a505271a40cafd68",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/ribbed.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -260,13 +260,13 @@ export const myProjects = [
       "Designed with a bottom base containing an inverted dovetail or slot channel.",
     ],
     href: "https://sketchfab.com/3d-models/part11-db37958905ef44d7a7f7bcd8c190e7e8?utm_medium=embed&utm_campaign=share-popup&utm_content=db37958905ef44d7a7f7bcd8c190e7e8",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/gusetted.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
       },
     ],
   },
@@ -281,13 +281,33 @@ export const myProjects = [
       "Rendered in a solid gray isometric view.",
     ],
     href: "https://sketchfab.com/3d-models/part12-80eb96c2c08b43589f3b88a746df687e?utm_medium=embed&utm_campaign=share-popup&utm_content=80eb96c2c08b43589f3b88a746df687e",
-    logo: "/assets/logos/solidedge.svg",
+    logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/bearing.png",
     tags: [
       {
         id: 1,
         name: "Solid Edge",
-        path: "/assets/logos/solidedge.svg",
+        path: "/assets/logos/soildedge.svg",
+      },
+    ],
+  },
+  {
+    id: 15,
+    title: "SIH 2026 PROJECT - 1 (Portable FILTRATION System Box)",
+    description:
+      "A 3D CAD model of an Portable filter box integrating electronics, gauges, and compact components.",
+    subDescription: [
+      "Portable system box designed.",
+      "Gauges, displays, ports integrated.",
+      "Maximum space efficiency achieved.",
+    ],
+    logo: "/assets/logos/soildworkslogo.svg",
+    image: "/assets/projects/OPEN VIEW.jpg",
+    tags: [
+      {
+        id: 1,
+        name: "Solid Works",
+        path: "/assets/logos/soildworkslogo.svg",
       },
     ],
   }
