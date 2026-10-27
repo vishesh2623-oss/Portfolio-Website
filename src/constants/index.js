@@ -1,6 +1,70 @@
 export const myProjects = [
   {
-    id: 15,
+    id: 1,
+    title: " NEERVA - Smart Integrated Portable Filter Box ",
+    description:
+      "A Prototype model of an Portable filter box integrating electronics, gauges, and compact components.",
+    subDescription: [
+      "Portable system box designed.",
+      "Gauges, displays, ports integrated.",
+      "Maximum space efficiency achieved.",
+    ],
+    href: "https://smart-water-quality-and-monitoring.vercel.app/",
+    cadHref: "https://sketchfab.com/3d-models/neerva-c69b9c280bb44dd6aff6447b45a2932f",
+    logo: "/assets/logos/jallogo.svg",
+    image: "/assets/projects/siha.png",
+    tags: [
+      {
+        id: 1,
+        name: "Filter Box / Solid Works ",
+        path: "/assets/logos/jallogo.svg",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: " ANVESHA - The Plug-and-Play Interactive Monument Map ",
+    description:
+      "Interactive plug-and-play Indian monument map.",
+    subDescription: [
+      "Hands-on 3D monument exploration.",
+      "Smart tactile learning technology.",
+      "Gamified cultural heritage education.",
+    ],
+    href: "https://sketchfab.com/3d-models/anvesha-07c2d11385944f5c8ac7f5743ff9575b",
+    logo: "/assets/logos/jal2.svg",
+    image: "/assets/projects/sihb.png",
+    tags: [
+      {
+        id: 1,
+        name: "Embedded Systems / Solid Works",
+        path: "/assets/logos/jal2.svg",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: " OMNI NODE - AI-Driven Retrofit Ecosystem ",
+    description:
+      "Edge-AI hardware upgrading legacy CNCs for flexible manufacturing.",
+    subDescription: [
+      "Designed hardware architecture with Jetson, ESP32, and MPU6050.",
+      "Built system diagrams, unit economics, and BOM.",
+      "Formulated a Master Jury Dossier and Business Proposal for the MSME Idea Hackathon 6.0.",
+    ],
+    href: "https://omni-node-dashboard.vercel.app/",
+    logo: "/assets/logos/nvidia.svg",
+    image: "/assets/projects/omni.jpeg",
+    tags: [
+      {
+        id: 1,
+        name: "Edge AI / IoT ",
+        path: "/assets/logos/nvidia.svg",
+      },
+    ],
+  },
+  {
+    id: 4,
     title: " 4-Cylinder Engine Assembly ",
     description:
       "3D parametric modeling, component mating, and dynamic motion analysis of an internal combustion engine.",
@@ -22,7 +86,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     title: "Francis Turbine Step Casing",
     description:
       "Francis Turbine: A reaction turbine used to convert hydraulic energy into mechanical energy.",
@@ -43,47 +107,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 3,
-    title: " Cylinder ",
-    description:
-      "High-Strength Cylindrical Concrete Unit . ",
-    subDescription: [
-      "Engineered with precision to deliver superior strength, dimensional accuracy, and long-lasting durability.",
-      "Manufactured using high-quality materials to meet the demanding requirements of modern construction and infrastructure projects.",
-    ],
-    href: "https://sketchfab.com/3d-models/part2-b839d3e1d86746029738cca7efa11b95?utm_medium=embed&utm_campaign=share-popup&utm_content=b839d3e1d86746029738cca7efa11b95",
-    logo: "/assets/logos/soildedge.svg",
-    image: "/assets/projects/cylinder.png",
-    tags: [
-      {
-        id: 1,
-        name: "Solid Edge",
-        path: "/assets/logos/soildedge.svg",
-      }
-    ],
-  },
-  {
-    id: 4,
-    title: "Block",
-    description:
-      "Premium Solid Concrete Block.",
-    subDescription: [
-      "Manufactured with precision using high-grade materials, our solid concrete blocks deliver exceptional compressive strength, dimensional accuracy, and long-term durability.",
-      "Designed to meet the highest industry standards for residential, commercial, and infrastructure applications.",
-    ],
-    href: "https://sketchfab.com/3d-models/part1-e4ce0d290d9848a7924d324e2a375329?utm_medium=embed&utm_campaign=share-popup&utm_content=e4ce0d290d9848a7924d324e2a375329",
-    logo: "/assets/logos/soildedge.svg",
-    image: "/assets/projects/block1.png",
-    tags: [
-      {
-        id: 1,
-        name: "Solid Edge",
-        path: "/assets/logos/soildedge.svg",
-      }
-    ],
-  },
-  {
-    id: 5,
+    id: 6,
     title: " Concrete Cone ",
     description:
       "Precision Cast Concrete Cone . ",
@@ -104,7 +128,7 @@ export const myProjects = [
     
   },
   {
-    id: 6,
+    id: 7,
     title: " Clevis Bracket ",
     description:
       "Precision Engineered Mounting Bracket",
@@ -124,7 +148,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "V-Block",
     description:
       "A 3D CAD model of a mechanical V-block used for supporting cylindrical workpieces.",
@@ -145,7 +169,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Combination Wrench",
     description:
       "A 3D CAD model of a hand tool designed for gripping and turning fasteners.",
@@ -166,7 +190,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Slotted Mounting Bracket",
     description:
       "A 3D CAD model of an asymmetric mechanical mounting block used for component positioning.",
@@ -178,27 +202,6 @@ export const myProjects = [
     href: "https://sketchfab.com/3d-models/part7-e9dff48a42b84ce3b663e75d8096ef66?utm_medium=embed&utm_campaign=share-popup&utm_content=e9dff48a42b84ce3b663e75d8096ef66",
     logo: "/assets/logos/soildedge.svg",
     image: "/assets/projects/slotted.png",
-    tags: [
-      {
-        id: 1,
-        name: "Solid Edge",
-        path: "/assets/logos/soildedge.svg",
-      },
-    ],
-  },
-  {
-    id: 10,
-    title: "Angle Mounting Bracket",
-    description:
-      "A 3D CAD model of an L-shaped mechanical mounting bracket used to secure components at a right angle.",
-    subDescription: [
-      "Features a large central bore hole on the vertical upright face with a chamfered top corner.",
-      "Includes a smaller mounting hole and a recessed channel groove on the bottom base.",
-      "Rendered in a solid gray isometric view.",
-    ],
-    href: "https://sketchfab.com/3d-models/part8-b89838f197764c4fa92a7ad9e52c064c?utm_medium=embed&utm_campaign=share-popup&utm_content=b89838f197764c4fa92a7ad9e52c064c",
-    logo: "/assets/logos/soildedge.svg",
-    image: "/assets/projects/angularmount.png",
     tags: [
       {
         id: 1,
@@ -251,27 +254,6 @@ export const myProjects = [
   },
   {
     id: 13,
-    title: "Gusseted Angle Bracket",
-    description:
-      "A 3D CAD model of a right-angle mechanical bracket designed for rigid structural support.",
-    subDescription: [
-      "Features a triangular gusset rib for added joint reinforcement.",
-      "Includes a vertical upright flange with chamfered top corners.",
-      "Designed with a bottom base containing an inverted dovetail or slot channel.",
-    ],
-    href: "https://sketchfab.com/3d-models/part11-db37958905ef44d7a7f7bcd8c190e7e8?utm_medium=embed&utm_campaign=share-popup&utm_content=db37958905ef44d7a7f7bcd8c190e7e8",
-    logo: "/assets/logos/soildedge.svg",
-    image: "/assets/projects/gusetted.png",
-    tags: [
-      {
-        id: 1,
-        name: "Solid Edge",
-        path: "/assets/logos/soildedge.svg",
-      },
-    ],
-  },
-  {
-    id: 14,
     title: "Bearing Cap",
     description:
       "A 3D CAD model of an arched clamp bracket used to retain shafts or cylindrical components.",
@@ -291,27 +273,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    id: 1,
-    title: "SIH 2026 PROJECT - 1 (Portable FILTRATION System Box)",
-    description:
-      "A 3D CAD model of an Portable filter box integrating electronics, gauges, and compact components.",
-    subDescription: [
-      "Portable system box designed.",
-      "Gauges, displays, ports integrated.",
-      "Maximum space efficiency achieved.",
-    ],
-    href: "https://sketchfab.com/3d-models/part12-80eb96c2c08b43589f3b88a746df687e?utm_medium=embed&utm_campaign=share-popup&utm_content=80eb96c2c08b43589f3b88a746df687e",
-    logo: "/assets/logos/soildworkslogo.svg",
-    image: "/assets/projects/siha.png",
-    tags: [
-      {
-        id: 1,
-        name: "Solid Works",
-        path: "/assets/logos/soildworkslogo.svg",
-      },
-    ],
-  }
 ];
 
 export const mySocials = [
@@ -356,7 +317,7 @@ export const experiences = [
 ];
 export const reviews = [
   {
-    name: "Academic Peer",
+    name: "Mathesh S",
     username: "@skcet_colleague",
     body: "Vishesh demonstrates a deep understanding of mechanical design principles. His 3D modeling skills in SolidWorks are exceptionally precise.",
     img: "https://robohash.org/skcet1",

@@ -14,6 +14,8 @@ const Project = ({
 
   href,
 
+  cadHref,
+
   image,
 
   tags,
@@ -88,6 +90,8 @@ const Project = ({
 
           href={href}
 
+          cadHref={cadHref}
+
           closeModal={() => setIsHidden(false)}
 
         />
@@ -103,4 +107,3 @@ const Project = ({
 
 
 export default Project; 
-

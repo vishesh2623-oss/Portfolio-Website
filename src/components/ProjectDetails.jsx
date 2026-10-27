@@ -7,6 +7,7 @@ const ProjectDetails = ({
   image,
   tags,
   href,
+  cadHref,
   closeModal,
 }) => {
   return (
@@ -46,15 +47,28 @@ const ProjectDetails = ({
             </div>
             
             {/* FIXED: href and target attributes moved here to the <a> tag */}
-            <a 
-              href={href} 
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-[#4ade80]"
-            >
-              View Project{" "}
-              <img src="assets/arrow-up.svg" className="size-4" alt="arrow" />
-            </a>
+            <div className="flex flex-wrap items-center justify-end gap-4">
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-[#4ade80]"
+              >
+                View Project{" "}
+                <img src="assets/arrow-up.svg" className="size-4" alt="" />
+              </a>
+              {cadHref && (
+                <a
+                  href={cadHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-[#4ade80]"
+                >
+                  View 3D CAD Model{" "}
+                  <img src="assets/arrow-up.svg" className="size-4" alt="" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </motion.div>

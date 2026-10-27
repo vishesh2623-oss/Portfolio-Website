@@ -1,48 +1,48 @@
 import React from "react";
+// Import your image directly at the top:
+import asciiPhoto from "../assets/my_ascii.jpg"; // Adjust path to where your file is saved
 
 const Hero = () => {
   return (
     <section className="relative w-full min-h-screen bg-neutral-950 text-white flex items-center justify-center px-6 md:px-16 overflow-hidden">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
         
-        {/* Left Side: Wordings */}
+        {/* Left Side */}
         <div className="flex flex-col items-start justify-center space-y-6 z-10">
-          <span className="px-3 py-1 text-xs uppercase tracking-wider font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full">
-            Unleash the Power
+          <span className="px-3 py-1 text-xs uppercase tracking-wider font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">
+            CAD / Simulation Specialist
           </span>
           
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-neutral-100">
-            Kawasaki Ninja <span className="text-emerald-500">H2</span>
+            Hi, I'm <span className="text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">Vishesh R S</span>
           </h1>
           
           <p className="text-neutral-400 text-base md:text-lg max-w-lg leading-relaxed">
-            Experience engineered precision and supercharged dominance. Interact with the 3D model on the right—click and drag to rotate the bike in 360 degrees.
+            Mechanical Engineering Student & CAD / Simulation Specialist. Transforming theoretical physics into functional design.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="#explore"
-              className="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-black font-semibold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+              href="#projects"
+              className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
             >
-              Explore Features
+              View Projects
             </a>
             <a
               href="#contact"
               className="px-6 py-3 rounded-lg border border-neutral-700 hover:border-neutral-500 text-neutral-200 font-semibold text-sm transition-all duration-300 bg-neutral-900/50"
             >
-              Contact Us
+              Get In Touch
             </a>
           </div>
         </div>
 
-        {/* Right Side: Interactive 3D Model */}
-        <div className="w-full h-[400px] md:h-[500px] lg:h-[550px] relative rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/40 shadow-2xl flex items-center justify-center">
-          <iframe
-            title="Kawasaki Ninja H2 3D Model"
-            className="w-full h-full border-0"
-            src="https://sketchfab.com/models/b74ecc39c3414411b62b781243088589/embed?autostart=1&camera=0&preload=1"
-            allow="autoplay; fullscreen; execution-while-out-of-viewport; execution-while-not-rendered; web-share"
-            allowFullScreen
+        {/* Right Side */}
+        <div className="w-full h-[400px] md:h-[500px] lg:h-[550px] relative rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/40 shadow-2xl flex items-center justify-center p-4">
+          <img
+            src="assest/projects/ascii.png" // Use the imported image here
+            alt="Vishesh R S ASCII Art"
+            className="w-full h-full object-cover rounded-xl border border-neutral-800 shadow-lg hover:scale-105 transition-transform duration-500"
           />
         </div>
 
