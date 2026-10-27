@@ -30,8 +30,8 @@ const About = () => {
             {/* Download Resume Button */}
             <div className="mt-4">
               <a
-                href="/assets/projects/vishesh_resume.pdf"
-                download="vishesh_resume.pdf"
+                href="/assets/projects/final_resume.pdf"
+                download="final_resume.pdf"
                 className="inline-block px-6 py-2.5 bg-[#4ade80]/10 hover:bg-[#4ade80] text-[#4ade80] hover:text-black font-medium text-sm rounded-xl border border-[#4ade80]/30 hover:border-[#4ade80] backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(74,222,128,0.15)] hover:shadow-[0_0_25px_rgba(74,222,128,0.4)] cursor-pointer text-center"
               >
                 Download Resume
