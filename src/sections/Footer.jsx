@@ -15,7 +15,7 @@ const socialLinks = [
   {
     id: 2,
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/vishesh-r-s-a1bb1b356/",
+    link: "https://www.linkedin.com/in/vishesh-r-s/",
     hoverClass: "hover:border-sky-500 hover:shadow-[0_0_25px_rgba(56,189,248,0.6)]",
     icon: (
       <svg className="w-7 h-7 group-hover:scale-110 transition-transform duration-300 ease-out" viewBox="0 0 24 24">
