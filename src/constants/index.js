@@ -1,6 +1,6 @@
 export const myProjects = [
   {
-    id: 1,
+    id: 15,
     title: " 4-Cylinder Engine Assembly ",
     description:
       "3D parametric modeling, component mating, and dynamic motion analysis of an internal combustion engine.",
@@ -292,7 +292,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 15,
+    id: 1,
     title: "SIH 2026 PROJECT - 1 (Portable FILTRATION System Box)",
     description:
       "A 3D CAD model of an Portable filter box integrating electronics, gauges, and compact components.",
