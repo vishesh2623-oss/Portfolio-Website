@@ -9,7 +9,6 @@ const certificateFolders = [
     specialization: "/assets/projects/google ai.jpg",
     logo: "/assets/logos/google.svg",
     certificates: [
-      "/assets/projects/ai data analysis.jpg",
       "/assets/projects/ai responsibly.jpg",
       "/assets/projects/art of prompt.jpg",
       "/assets/projects/google ai intro.jpg",
@@ -47,6 +46,7 @@ const certificateFolders = [
 
 const otherCertificates = [
   "/assets/projects/ai everyone.jpg",
+  "/assets/projects/ai data analysis.jpg",
   "/assets/projects/intro to python.jpg",
   "/assets/projects/microsoft azure.jpg",
   "/assets/projects/basics python.jpg",
