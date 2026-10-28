@@ -11,24 +11,40 @@ const About = () => {
     <section className="c-space section-spacing" id="about">
       <h2 className="text-heading">About Me</h2>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-<div className="flex items-end grid-default-color grid-1 relative overflow-hidden bg-black/80 rounded-2xl">
-  <img
-    src="assets/card.webp"
-    alt="Profile background"
-    className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5] opacity-30 object-cover"
-  />
-
-          <div className="z-10 p-2 sm:p-4">
-            <p className="headtext">Hi, I'm Vishesh R S </p>
-            <p className="subtext">
-              As a B.E. Mechanical Engineering student at SKCET, I focus on
-              transforming theoretical physics into practical, functional
-              designs using advanced CAD tools.
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[minmax(18rem,auto)] mt-12">
+<div className="flex items-start grid-default-color grid-1 relative overflow-hidden bg-black/80 rounded-2xl">
+          <div className="z-10 w-full p-2 sm:p-4">
+            <p className="headtext text-center text-2xl font-semibold md:text-3xl">
+              Hi, I&apos;m Vishesh R S
             </p>
+            <div className="space-y-3 text-sm font-semibold leading-relaxed text-neutral-100 md:text-base">
+              <p>
+                As a B.E. Mechanical Engineering student at SKCET I am
+                passionate about mechanical design, CAD modelling, product
+                development, and engineering innovation.
+              </p>
+              <p>
+                My interests lie in transforming ideas into practical
+                engineering solutions through 3D modelling, component
+                integration, and prototype development. I am developing my
+                skills in SOLIDWORKS while exploring how electronics, sensors,
+                and emerging technologies can enhance mechanical systems.
+              </p>
+              <p>
+                One of my key projects is a Smart Water Purification and Quality
+                Monitoring System designed for rural and mining-affected areas.
+                Through this project, I am exploring the integration of
+                mechanical design, water filtration, and real-time quality
+                monitoring into a portable system.
+              </p>
+              <p>
+                I believe engineering is not just about designing components,
+                but about understanding problems, evaluating solutions, and
+                continuously improving designs through testing and iteration.
+              </p>
+            </div>
 
-            {/* Download Resume Button */}
-            <div className="mt-4">
+            <div className="mt-8">
               <a
                 href="/assets/projects/final_resume.pdf"
                 download="final_resume.pdf"
