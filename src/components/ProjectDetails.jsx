@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 const ProjectDetails = ({
   title,
@@ -10,12 +10,15 @@ const ProjectDetails = ({
   cadHref,
   closeModal,
 }) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
       <motion.div
         className="relative max-w-2xl border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
-        initial={{ opacity: 0, scale: 0.5 }}
+        initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.97, y: 12 }}
         animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.35 }}
       >
         <button
           onClick={closeModal}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
+import Reveal from "../components/Reveal";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -64,13 +65,13 @@ const Contact = () => {
       />
       {showAlert && <Alert type={alertType} text={alertMessage} />}
       <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
-        <div className="flex flex-col items-start w-full gap-5 mb-10">
-          <h2 className="text-heading">Let's Talk</h2>
+        <Reveal className="flex flex-col items-start w-full gap-5 mb-10">
+          <h2 className="text-heading">Let&apos;s Talk</h2>
           <p className="font-normal text-neutral-400">
-            Whether you're looking to collaborate on mechanical design, CAD modeling or engineering projects, I'm here to help.
+            Whether you&apos;re looking to collaborate on mechanical design, CAD modeling or engineering projects, I&apos;m here to help.
           </p>
-        </div>
-        <form className="w-full" onSubmit={handleSubmit}>
+        </Reveal>
+        <Reveal as="form" className="w-full" delay={0.12} onSubmit={handleSubmit}>
           <div className="mb-5">
             <label htmlFor="name" className="feild-label">
               Full Name
@@ -126,7 +127,7 @@ const Contact = () => {
           >
             {!isLoading ? "Send" : "Sending..."}
           </button>
-        </form>
+        </Reveal>
       </div>
     </section>
   );

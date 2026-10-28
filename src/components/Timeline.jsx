@@ -1,8 +1,11 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
+import Reveal from "./Reveal";
 
 export const Timeline = ({ data }) => {
+  const shouldReduceMotion = useReducedMotion();
   const ref = useRef(null);
   const containerRef = useRef(null);
   const [height, setHeight] = useState(0);
@@ -24,12 +27,13 @@ export const Timeline = ({ data }) => {
 
   return (
     <div className="c-space section-spacing" ref={containerRef}>
-      <h2 className="text-heading">My Engineering Journey</h2>
+      <Reveal as="h2" className="text-heading">My Engineering Journey</Reveal>
       <div ref={ref} className="relative pb-20">
         {data.map((item, index) => (
-          <div
+          <Reveal
             key={index}
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            delay={index * 0.1}
           >
             <div className="sticky z-40 flex flex-col items-center self-start max-w-xs md:flex-row top-40 lg:max-w-sm md:w-full">
               <div className="absolute flex items-center justify-center w-10 h-10 rounded-full -left-[15px] bg-midnight">
@@ -53,7 +57,7 @@ export const Timeline = ({ data }) => {
                 </p>
               ))}
             </div>
-          </div>
+          </Reveal>
         ))}
         <div
           style={{
@@ -63,8 +67,8 @@ export const Timeline = ({ data }) => {
         >
           <motion.div
             style={{
-              height: heightTransform,
-              opacity: opacityTransform,
+              height: shouldReduceMotion ? height : heightTransform,
+              opacity: shouldReduceMotion ? 1 : opacityTransform,
             }}
             className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-lavender/50 to-transparent from-[0%] via-[10%] rounded-full"
           />

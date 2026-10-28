@@ -1,3 +1,5 @@
+import Reveal from "../components/Reveal";
+
 const Credentials = () => {
   const certificates = [
     "/assets/projects/ai curve.jpg", 
@@ -40,14 +42,15 @@ const Credentials = () => {
   // Reusable grid layout for the sections
   const ImageGrid = ({ title, images }) => (
     <div className="mb-20">
-      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-10 bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]">
+      <Reveal as="h2" className="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-10 bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]">
         {title}
-      </h2>
+      </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
         {images.map((src, index) => (
-          <div 
+          <Reveal
             key={`${title}-${index}`}
             className="group overflow-hidden rounded-2xl border border-white/10 bg-neutral-950/80 shadow-[0_0_20px_rgba(0,0,0,0.6)] hover:border-green-500/30 transition-all duration-300"
+            delay={Math.min(index * 0.05, 0.3)}
           >
             <img 
               src={src} 
@@ -57,7 +60,7 @@ const Credentials = () => {
                 e.target.style.display = 'none';
               }}
             />
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>

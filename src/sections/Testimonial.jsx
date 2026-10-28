@@ -1,15 +1,18 @@
 import { twMerge } from "tailwind-merge";
 import Marquee from "../components/Marquee";
 import { reviews } from "../constants";
+import Reveal from "../components/Reveal";
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
-    <figure
+    <Reveal
+      as="figure"
       className={twMerge(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-gray-50/[.1] bg-gradient-to-r bg-indigo to-storm hover:bg-royal hover-animation"
       )}
+      whileHover={{ y: -4 }}
     >
       <div className="flex flex-row items-center gap-2">
         <img
@@ -27,14 +30,14 @@ const ReviewCard = ({ img, name, username, body }) => {
         </div>
       </div>
       <blockquote className="mt-2 text-sm">{body}</blockquote>
-    </figure>
+    </Reveal>
   );
 };
 
 export default function Testimonial() {
   return (
     <div className="items-start mt-25 md:mt-35 c-space">
-      <h2 className="text-heading">Hear From My Clients</h2>
+      <Reveal as="h2" className="text-heading">Hear From My Clients</Reveal>
       <div className="relative flex flex-col items-center justify-center w-full mt-12 overflow-hidden">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((review) => (

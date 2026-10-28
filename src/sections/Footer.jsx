@@ -1,4 +1,4 @@
-import React from "react";
+import Reveal from "../components/Reveal";
 
 const socialLinks = [
   {
@@ -90,11 +90,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-black/40 backdrop-blur-md">
+    <Reveal as="footer" className="w-full border-t border-white/10 pt-8 pb-10 c-space bg-black/40 backdrop-blur-md">
       <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 max-w-7xl mx-auto">
         
         {/* Links */}
-        <div className="flex gap-2 text-neutral-400 text-xs sm:text-sm">
+        <Reveal className="flex gap-2 text-neutral-400 text-xs sm:text-sm">
           <a
             href="/terms.pdf"
             onClick={(e) => openPdfModal(e, "/terms.pdf", "TermsAndConditions")}
@@ -110,10 +110,10 @@ const Footer = () => {
           >
             Privacy Policy
           </a>
-        </div>
+        </Reveal>
 
         {/* Larger, Animated Social Buttons */}
-        <div className="flex items-center justify-center gap-5">
+        <Reveal className="flex items-center justify-center gap-5" delay={0.08}>
           {socialLinks.map((social) => (
             <a
               key={social.id}
@@ -126,15 +126,15 @@ const Footer = () => {
               {social.icon}
             </a>
           ))}
-        </div>
+        </Reveal>
 
         {/* Copyright */}
-        <p className="text-neutral-400 text-xs sm:text-sm text-center">
+        <Reveal as="p" className="text-neutral-400 text-xs sm:text-sm text-center" delay={0.16}>
           © {new Date().getFullYear()} Vishesh R S . All rights reserved.
-        </p>
+        </Reveal>
 
       </div>
-    </footer>
+    </Reveal>
   );
 };
 

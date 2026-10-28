@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import ProjectDetails from "./ProjectDetails";
+import Reveal from "./Reveal";
 
 
 
@@ -21,7 +22,7 @@ const Project = ({
   tags,
 
   setPreview,
-
+  revealDelay = 0,
 }) => {
 
   const [isHidden, setIsHidden] = useState(false);
@@ -30,14 +31,12 @@ const Project = ({
 
     <>
 
-      <div
-
+      <Reveal
         className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
-
+        delay={revealDelay}
+        whileHover={{ y: -3 }}
         onMouseEnter={() => setPreview(image)}
-
         onMouseLeave={() => setPreview(null)}
-
       >
 
         <div>
@@ -70,9 +69,9 @@ const Project = ({
 
         </button>
 
-      </div>
+      </Reveal>
 
-      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
+      <Reveal className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" delay={revealDelay} y={0} />
 
       {isHidden && (
 
