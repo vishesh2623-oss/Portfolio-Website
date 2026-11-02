@@ -323,8 +323,8 @@ export const reviews = [
     img: "https://robohash.org/skcet1",
   },
   {
-    name: "Project Advisor",
-    username: "@advisor",
+    name: "Shyam Sundar B",
+    username: "@skcet_colleague",
     body: "Excellent work on the CAD analysis. The attention to detail in the simulations was thorough and highly accurate.",
     img: "https://robohash.org/advisor1",
   },
