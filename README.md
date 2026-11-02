@@ -59,3 +59,19 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 │   └── main.jsx            # Entry point
 ├── tailwind.config.js
 └── vite.config.js
+```
+
+## Website visitor counter
+
+The total visit count is stored in Supabase and incremented atomically once per
+page load. The migration initializes the count to 142 only when the database row
+does not already exist, so redeployments do not reset it.
+
+1. Create a Supabase project and run
+   [`supabase/migrations/20261102172900_site_visitor_counter.sql`](./supabase/migrations/20261102172900_site_visitor_counter.sql)
+   in its SQL Editor.
+2. Set `VITE_SUPABASE_URL` to the project URL and `VITE_SUPABASE_ANON_KEY` to
+   its public anon/publishable key in the local environment and the deployment
+   provider's build environment.
+3. Build and deploy the site. The anon key is intended for browser use; never
+   put a Supabase service-role key in either Vite environment variable.

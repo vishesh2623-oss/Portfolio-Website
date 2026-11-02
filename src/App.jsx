@@ -8,6 +8,7 @@ import Experiences from "./sections/Experiences";
 import Testimonial from "./sections/Testimonial";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import VisitorCounter from "./sections/VisitorCounter";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
         <Contact />
       </section>
 
+      <VisitorCounter />
       <Footer />
     </div>
   );

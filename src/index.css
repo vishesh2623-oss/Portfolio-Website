@@ -55,6 +55,31 @@ body {
   overflow-x: hidden;
 }
 
+.visitor-count-pop {
+  display: inline-block;
+  animation: visitor-count-pop 450ms ease-out;
+}
+
+@keyframes visitor-count-pop {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.94);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visitor-count-pop {
+    animation: none;
+  }
+}
+
 .c-space {
   @apply sm:px-10 px-5 lg:px-15;
 }
