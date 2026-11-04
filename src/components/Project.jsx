@@ -1,13 +1,8 @@
 /* eslint-disable react/prop-types */
 import Reveal from "./Reveal";
 
-const Project = ({
-  project,
-  onSelect,
-  setPreview,
-  revealDelay = 0,
-}) => {
-  const { title, tags, image } = project;
+const Project = ({ project, onSelect, setPreview, revealDelay = 0 }) => {
+  const { title, image, tags = [] } = project;
 
   return (
     <>
@@ -20,22 +15,28 @@ const Project = ({
         onClick={onSelect}
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
+        aria-label={`View project details for ${title.trim()}`}
       >
         <div>
           <p className="text-2xl">{title.trim()}</p>
-          <div className="flex gap-5 mt-2 text-sand">
+          <div className="flex flex-wrap gap-3 mt-2 text-sand sm:gap-5">
             {tags.map((tag) => (
               <span key={tag.id}>{tag.name}</span>
             ))}
           </div>
         </div>
         <span className="flex items-center gap-1 hover-animation">
-          Read More
-          <img src="assets/arrow-right.svg" className="w-5" />
+          View Details
+          <img src="/assets/arrow-right.svg" className="w-5" alt="" />
         </span>
       </Reveal>
-      <Reveal className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" delay={revealDelay} y={0} />
+      <Reveal
+        className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full"
+        delay={revealDelay}
+        y={0}
+      />
     </>
   );
 };
+
 export default Project;

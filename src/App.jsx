@@ -25,9 +25,11 @@ const App = () => {
     };
 
     window.addEventListener("popstate", syncProjectFromLocation);
+
     if (getProjectFromLocation() && !window.location.hash) {
       document.getElementById("projects")?.scrollIntoView();
     }
+
     return () => window.removeEventListener("popstate", syncProjectFromLocation);
   }, []);
 

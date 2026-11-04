@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 const isSketchfabUrl = (value) => {
@@ -30,12 +30,30 @@ const getSketchfabModelId = (...urls) => {
 
 const ProjectDetails = ({ project, onBack }) => {
   const shouldReduceMotion = useReducedMotion();
-  const { title, description, subDescription = [], image, tags = [], href, cadHref } = project;
+  const {
+    title,
+    description,
+    subDescription = [],
+    image,
+    tags = [],
+    href,
+    cadHref,
+  } = project;
   const modelId = getSketchfabModelId(cadHref, href);
   const sketchfabLink = [cadHref, href].find(isSketchfabUrl);
   const projectLink = href && !isSketchfabUrl(href) ? href : null;
   const [viewerState, setViewerState] = useState(modelId ? "loading" : "fallback");
   const [reloadKey, setReloadKey] = useState(0);
+
+  useEffect(() => {
+    if (!modelId || viewerState !== "loading") return undefined;
+
+    const timeoutId = window.setTimeout(() => {
+      setViewerState("fallback");
+    }, 20000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [modelId, reloadKey, viewerState]);
 
   const retryModel = () => {
     setViewerState("loading");
@@ -112,13 +130,13 @@ const ProjectDetails = ({ project, onBack }) => {
                 )}
               </>
             ) : image ? (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-5 text-center">
+              <div className="absolute inset-0">
                 <img
                   src={image}
                   alt={`${title.trim()} project preview`}
-                  className="h-full w-full rounded-lg object-contain"
+                  className="h-full w-full object-contain p-4 pb-12"
                 />
-                <p className="text-sm text-neutral-400">
+                <p className="absolute inset-x-0 bottom-0 bg-primary/80 px-4 py-3 text-center text-sm text-neutral-400">
                   {modelId
                     ? "The interactive model is unavailable. Showing the project image instead."
                     : "No 3D model is linked for this project. Showing the project image instead."}
