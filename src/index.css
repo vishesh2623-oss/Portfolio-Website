@@ -127,19 +127,21 @@ html {
 
 /* About Section */
 .grid-1 {
-  @apply row-span-1 md:row-span-2 md:col-span-3 min-h-[40rem] md:min-h-[42rem] relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 md:row-span-2 md:col-span-7 min-h-[40rem] md:min-h-[42rem] relative overflow-hidden hover:-translate-y-1 duration-200;
 }
 .grid-2 {
-  @apply row-span-1 md:col-span-3 h-[27rem] sm:h-[28rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 md:col-span-7 h-[27rem] sm:h-[28rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
 }
 .grid-3 {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 md:col-span-7 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
 }
+/* Engineering the Possible — dominant tile (9/14 ≈ 64%) */
 .grid-4 {
-  @apply row-span-1 md:col-span-2 h-[27rem] sm:h-[30rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 md:col-span-9 h-[36rem] md:h-full md:min-h-[28rem] relative overflow-hidden hover:-translate-y-1 duration-200;
 }
+/* Engineering Software & Tools — compact tile (5/14 ≈ 36%) */
 .grid-5 {
-  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 md:col-span-5 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
 }
 
 .grid-default-color {

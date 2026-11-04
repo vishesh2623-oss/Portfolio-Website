@@ -10,7 +10,7 @@ const About = () => {
     <section className="c-space section-spacing" id="about">
       <Reveal as="h2" className="text-heading">About Me</Reveal>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[minmax(18rem,auto)] mt-12">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-14 md:auto-rows-[minmax(18rem,auto)] mt-12">
         <Reveal className="flex items-start grid-default-color grid-1 relative overflow-hidden bg-black/80 rounded-2xl" whileHover={{ y: -4 }}>
           <div className="z-10 w-full p-2 sm:p-4">
             <p className="headtext text-center text-2xl font-semibold md:text-3xl">
@@ -82,15 +82,18 @@ const About = () => {
           <EngineeringTurbine />
         </Reveal>
 
-        {/* Grid 5: Tech Stack */}
+        {/* Grid 5: Engineering Software & Tools (compact, orbits centred) */}
         <Reveal className="grid-default-color grid-5 relative overflow-hidden" delay={0.16} whileHover={{ y: -4 }}>
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Engineering Software & Tools</p>
+          <div className="absolute inset-x-0 top-0 z-10 px-4 pt-2 sm:px-5 sm:pt-3">
+            <p className="headtext mt-1 mb-1">Engineering Software & Tools</p>
             <p className="subtext">
              I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360 and Solid Edge.
             </p>
           </div>
-          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+          {/* readability scrim behind the heading (same pattern as the toolkit tile) */}
+          <div aria-hidden className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/55 to-transparent sm:h-28" />
+          {/* orbit ring: centred in the compact tile, scaled per breakpoint so no icon is clipped */}
+          <div className="absolute inset-0 z-[5] flex items-center justify-center scale-[0.58] sm:scale-[0.66] md:scale-[0.55] lg:scale-[0.76] xl:scale-90">
             <Frameworks />
           </div>
         </Reveal>

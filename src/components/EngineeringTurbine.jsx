@@ -78,67 +78,107 @@ const EngineeringTurbine = () => {
   ];
 
   return (
-    <div className="absolute inset-0 overflow-hidden rounded-2xl">
-      <Canvas
-        dpr={[1, typeof window !== "undefined" && window.innerWidth < 640 ? 1.6 : 2]}
-        camera={{ position: [9.2, 4.6, 13.6], fov: 38 }}
-        gl={{ antialias: true, alpha: true }}
-        shadows
-      >
-        <ResponsiveCamera />
-        <ClockEngine />
-        <AutoFramer />
-
-        <ambientLight intensity={0.32} />
-        <directionalLight
-          position={[7, 10, 8]} intensity={1.7} color="#fff2e0" castShadow
-          shadow-mapSize={[1024, 1024]} shadow-bias={-0.0004}
-        />
-        <directionalLight position={[-8, 3, -7]} intensity={0.55} color="#7fb4ff" />
-        <pointLight position={[0, -2.5, 6]} intensity={12} distance={13} color="#38bdf8" />
-        <Environment resolution={128} frames={1}>
-          <Lightformer form="rect" intensity={2.2} position={[4, 8, 6]} scale={[10, 6, 1]} target={[0, 0, 0]} />
-          <Lightformer form="rect" intensity={1.1} position={[-8, 4, -6]} scale={[10, 6, 1]} target={[0, 0, 0]} />
-          <Lightformer form="ring" intensity={1.4} position={[0, -6, 4]} scale={[8, 8, 1]} target={[0, 0, 0]} />
-          <Lightformer form="rect" intensity={0.8} position={[0, 3, -10]} scale={[12, 8, 1]} target={[0, 0, 0]} />
-        </Environment>
-
-        <Backdrop />
-        <DisplayPlatform />
-        <Particles />
-
-        <StageGroup>
-          <EngineAssembly />
-        </StageGroup>
-
-        {/* phase sync for the status chip */}
-        <PhaseReporter onPhase={setPhase} />
-
-        <OrbitControls
-          ref={controlsRef}
-          makeDefault
-          enablePan={false}
-          enableZoom
-          enableDamping
-          dampingFactor={0.08}
-          minDistance={8}
-          maxDistance={34}
-          maxPolarAngle={Math.PI * 0.62}
-        />
-      </Canvas>
-
-      {/* ============ HEADING OVERLAY ============ */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 p-4 sm:p-5">
-        <p className="headtext mt-0 mb-1 text-[clamp(1.05rem,4.6vw,1.4rem)] md:mb-2 md:mt-1 lg:text-[1.5rem] break-words leading-tight font-semibold tracking-wide">
+    <div className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl md:flex-row">
+      {/* ============ LEFT: text panel (desktop) / text block (mobile) ============ */}
+      <div className="relative z-10 flex shrink-0 flex-col justify-center p-4 sm:p-5 md:w-[38%] md:border-r md:border-white/10 md:px-5 md:py-6 lg:w-[38%]">
+        <p className="headtext mt-0 mb-1 text-[clamp(1.3rem,4.2vw,1.6rem)] md:mb-2 md:mt-0 md:text-[clamp(1.05rem,1.7vw,1.35rem)] lg:text-[1.6rem] break-words leading-tight font-semibold tracking-wide">
           ENGINEERING THE POSSIBLE.
         </p>
-        <p className="subtext font-semibold text-neutral-200 max-w-[80%] md:block hidden">
+        <p className="subtext font-semibold text-neutral-200">
           Where turbine architecture meets additive thinking.
         </p>
-        <p className="subtext mt-1 max-w-[85%] text-neutral-400">
+        <p className="subtext mt-2 text-neutral-400">
           Exploring the intersection of mechanical design, advanced engineering and
           future technologies.
         </p>
+
+        {/* technical HUD labels — relocated into the text column so they never
+            sit on top of the compressor / casing geometry */}
+        <div className="pointer-events-none mt-4 flex flex-wrap gap-1.5">
+          {["TURBINE ASSEMBLY", "ADVANCED MECHANICS", "PRECISION ENGINEERING"].map((t) => (
+            <div key={t} className="rounded-sm border border-white/10 bg-black/40 px-2 py-1 backdrop-blur-md">
+              <span className="font-mono text-[9px] tracking-[0.18em] text-sky-300/80">{t}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ============ RIGHT: 3D turbine canvas ============ */}
+      <div className="relative min-h-[13rem] min-w-0 flex-1 md:min-h-0">
+        <Canvas
+          dpr={[1, typeof window !== "undefined" && window.innerWidth < 640 ? 1.6 : 2]}
+          camera={{ position: [9.2, 4.6, 13.6], fov: 38 }}
+          gl={{ antialias: true, alpha: true }}
+          shadows
+        >
+          <ResponsiveCamera />
+          <ClockEngine />
+          <AutoFramer />
+
+          <ambientLight intensity={0.45} />
+          <directionalLight
+            position={[7, 10, 8]} intensity={2.0} color="#fff2e0" castShadow
+            shadow-mapSize={[1024, 1024]} shadow-bias={-0.0004}
+          />
+          <directionalLight position={[-8, 3, -7]} intensity={0.75} color="#7fb4ff" />
+          <pointLight position={[0, -2.5, 6]} intensity={16} distance={13} color="#38bdf8" />
+          <Environment resolution={128} frames={1}>
+            <Lightformer form="rect" intensity={2.6} position={[4, 8, 6]} scale={[10, 6, 1]} target={[0, 0, 0]} />
+            <Lightformer form="rect" intensity={1.3} position={[-8, 4, -6]} scale={[10, 6, 1]} target={[0, 0, 0]} />
+            <Lightformer form="ring" intensity={1.6} position={[0, -6, 4]} scale={[8, 8, 1]} target={[0, 0, 0]} />
+            <Lightformer form="rect" intensity={1.0} position={[0, 3, -10]} scale={[12, 8, 1]} target={[0, 0, 0]} />
+          </Environment>
+
+          <Backdrop />
+          <DisplayPlatform />
+          <Particles />
+
+          <StageGroup>
+            <EngineAssembly />
+          </StageGroup>
+
+          {/* phase sync for the status chip */}
+          <PhaseReporter onPhase={setPhase} />
+
+          <OrbitControls
+            ref={controlsRef}
+            makeDefault
+            enablePan={false}
+            enableZoom
+            enableDamping
+            dampingFactor={0.08}
+            minDistance={8}
+            maxDistance={34}
+            maxPolarAngle={Math.PI * 0.62}
+          />
+        </Canvas>
+
+        {/* ============ status chip ============ */}
+        <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex max-w-[70%] items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-md">
+          <span
+            className="inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+            style={{ backgroundColor: style.dot, boxShadow: `0 0 8px ${style.dot}` }}
+          />
+          <span className="truncate font-mono text-[10px] font-medium tracking-[0.14em] text-neutral-300">
+            {style.txt} · N1 {style.rpm} RPM{paused ? " · PAUSED" : ""}
+          </span>
+        </div>
+
+        {/* ============ control cluster ============ */}
+        <div className="absolute bottom-3 right-3 z-10 flex gap-1.5">
+          {controls.map((c) => (
+            <button
+              key={c.title}
+              type="button"
+              title={c.title}
+              aria-label={c.title}
+              onClick={c.fn}
+              className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-black/40 text-[11px] leading-none text-neutral-300 backdrop-blur-md transition-colors hover:border-sky-400/50 hover:text-sky-300 focus:outline-none active:scale-95"
+            >
+              {c.icon}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* ============ HUD: corner brackets ============ */}
@@ -148,44 +188,8 @@ const EngineeringTurbine = () => {
         ["bottom-2 left-2", "border-b border-l"],
         ["bottom-2 right-2", "border-b border-r"],
       ].map(([pos, edges]) => (
-        <div key={pos} className={`pointer-events-none absolute ${pos} ${edges} h-4 w-4 border-sky-400/25`} />
+        <div key={pos} className={`pointer-events-none absolute ${pos} ${edges} h-4 w-4 border-sky-400/25 z-20`} />
       ))}
-
-      {/* ============ HUD: technical labels (sm and up) ============ */}
-      <div className="pointer-events-none absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-2 sm:flex">
-        {["TURBINE ASSEMBLY", "ADVANCED MECHANICS", "PRECISION ENGINEERING"].map((t) => (
-          <div key={t} className="rounded-sm border border-white/10 bg-black/40 px-2 py-1 backdrop-blur-md">
-            <span className="font-mono text-[9px] tracking-[0.18em] text-sky-300/80">{t}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* ============ status chip ============ */}
-      <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex max-w-[70%] items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-md">
-        <span
-          className="inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-          style={{ backgroundColor: style.dot, boxShadow: `0 0 8px ${style.dot}` }}
-        />
-        <span className="truncate font-mono text-[10px] font-medium tracking-[0.14em] text-neutral-300">
-          {style.txt} · N1 {style.rpm} RPM{paused ? " · PAUSED" : ""}
-        </span>
-      </div>
-
-      {/* ============ control cluster ============ */}
-      <div className="absolute bottom-3 right-3 z-10 flex gap-1.5">
-        {controls.map((c) => (
-          <button
-            key={c.title}
-            type="button"
-            title={c.title}
-            aria-label={c.title}
-            onClick={c.fn}
-            className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-black/40 text-[11px] leading-none text-neutral-300 backdrop-blur-md transition-colors hover:border-sky-400/50 hover:text-sky-300 focus:outline-none active:scale-95"
-          >
-            {c.icon}
-          </button>
-        ))}
-      </div>
     </div>
   );
 };

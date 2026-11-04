@@ -291,7 +291,9 @@ export function AutoFramer() {
   useFrame((_, dt) => {
     if (!controls || !idle.current) return;
     const { p } = cycleState(sim.time);
-    const spanFit = 0.78; // matches stage fitScale so distances agree
+    /* spanFit close to 1.0 keeps the assembled engine large in frame
+       (~90% of canvas width) while the exploded span still fits on zoom-out */
+    const spanFit = 0.97;
     const spanAssembled = 12.5 * spanFit;
     const spanExploded = 19.2 * spanFit;
     const span = THREE.MathUtils.lerp(spanAssembled, spanExploded, p);
@@ -299,7 +301,7 @@ export function AutoFramer() {
     const aspect = size.width / Math.max(1, size.height);
     const vHalf = ((camera.fov || 38) * Math.PI) / 180 / 2;
     const hHalf = Math.atan(Math.tan(vHalf) * aspect);
-    const desired = THREE.MathUtils.clamp(span / (2 * Math.tan(hHalf)), 9.5, 34);
+    const desired = THREE.MathUtils.clamp(span / (2 * Math.tan(hHalf)), 8.5, 34);
 
     const target = controls.target;
     const cur = camera.position.distanceTo(target);
