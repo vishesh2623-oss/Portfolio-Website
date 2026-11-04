@@ -82,19 +82,23 @@ const About = () => {
           <EngineeringTurbine />
         </Reveal>
 
-        {/* Grid 5: Engineering Software & Tools (compact, orbits centred) */}
-        <Reveal className="grid-default-color grid-5 relative overflow-hidden" delay={0.16} whileHover={{ y: -4 }}>
-          <div className="absolute inset-x-0 top-0 z-10 px-4 pt-2 sm:px-5 sm:pt-3">
-            <p className="headtext mt-1 mb-1">Engineering Software & Tools</p>
+        {/* Grid 5: Engineering Software & Tools (text header on top, orbit wheel below) */}
+        <Reveal className="grid-default-color grid-5 relative flex flex-col overflow-hidden" delay={0.16} whileHover={{ y: -4 }}>
+          {/* AREA 1 — text header: static, above the wheel, wheel can never enter here */}
+          <div className="relative z-20 px-4 pt-2 sm:px-5 sm:pt-3">
+            <p className="headtext mt-1 mb-1">Engineering Software &amp; Tools</p>
             <p className="subtext">
              I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360 and Solid Edge.
             </p>
           </div>
           {/* readability scrim behind the heading (same pattern as the toolkit tile) */}
-          <div aria-hidden className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/55 to-transparent sm:h-28" />
-          {/* orbit ring: centred in the compact tile, scaled per breakpoint so no icon is clipped */}
-          <div className="absolute inset-0 z-[5] flex items-center justify-center scale-[0.58] sm:scale-[0.66] md:scale-[0.55] lg:scale-[0.76] xl:scale-90">
-            <Frameworks />
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/55 to-transparent sm:h-28" />
+          {/* AREA 2 — rotating logo wheel: its own zone below the header, all orbit
+              content lives and rotates strictly inside this container */}
+          <div className="relative z-[5] mt-1 flex-1 min-h-[7rem] md:mt-0">
+            <div className="absolute inset-x-2 top-0 bottom-2 sm:inset-x-3 md:top-1 md:bottom-1">
+              <Frameworks />
+            </div>
           </div>
         </Reveal>
       </div>

@@ -139,9 +139,11 @@ html {
 .grid-4 {
   @apply row-span-1 md:col-span-9 h-[36rem] md:h-full md:min-h-[28rem] relative overflow-hidden hover:-translate-y-1 duration-200;
 }
-/* Engineering Software & Tools — compact tile (5/14 ≈ 36%) */
+/* Engineering Software & Tools — compact tile (5/14 ≈ 36%).
+   Mobile: min-height instead of fixed height so the text header can grow
+   naturally when the description wraps; the wheel keeps the rest. */
 .grid-5 {
-  @apply row-span-1 md:col-span-5 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 min-h-[19rem] md:col-span-5 md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
 }
 
 .grid-default-color {
