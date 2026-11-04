@@ -1,108 +1,41 @@
-import { useState } from "react";
-
-import ProjectDetails from "./ProjectDetails";
+/* eslint-disable react/prop-types */
 import Reveal from "./Reveal";
 
-
-
 const Project = ({
-
-  title,
-
-  description,
-
-  subDescription,
-
-  href,
-
-  cadHref,
-
-  image,
-
-  tags,
-
+  project,
+  onSelect,
   setPreview,
   revealDelay = 0,
 }) => {
-
-  const [isHidden, setIsHidden] = useState(false);
+  const { title, tags, image } = project;
 
   return (
-
     <>
-
       <Reveal
-        className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
+        as="button"
+        type="button"
+        className="flex flex-wrap items-center justify-between w-full py-10 text-left cursor-pointer space-y-6 sm:space-y-0"
         delay={revealDelay}
         whileHover={{ y: -3 }}
+        onClick={onSelect}
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
       >
-
         <div>
-
-          <p className="text-2xl">{title}</p>
-
+          <p className="text-2xl">{title.trim()}</p>
           <div className="flex gap-5 mt-2 text-sand">
-
             {tags.map((tag) => (
-
               <span key={tag.id}>{tag.name}</span>
-
             ))}
-
           </div>
-
         </div>
-
-        <button
-
-          onClick={() => setIsHidden(true)}
-
-          className="flex items-center gap-1 cursor-pointer hover-animation"
-
-        >
-
+        <span className="flex items-center gap-1 hover-animation">
           Read More
-
           <img src="assets/arrow-right.svg" className="w-5" />
-
-        </button>
-
+        </span>
       </Reveal>
-
       <Reveal className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" delay={revealDelay} y={0} />
-
-      {isHidden && (
-
-        <ProjectDetails
-
-          title={title}
-
-          description={description}
-
-          subDescription={subDescription}
-
-          image={image}
-
-          tags={tags}
-
-          href={href}
-
-          cadHref={cadHref}
-
-          closeModal={() => setIsHidden(false)}
-
-        />
-
-      )}
-
     </>
-
   );
-
 };
-
-
-
-export default Project; 
+export default Project;
