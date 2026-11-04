@@ -55,6 +55,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-x: clip;
+}
+
 .visitor-count-pop {
   display: inline-block;
   animation: visitor-count-pop 450ms ease-out;

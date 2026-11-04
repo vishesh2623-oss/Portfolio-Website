@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   ContactShadows,
@@ -339,8 +339,8 @@ function SceneContent({ onPhase }) {
   const lastPhase = useRef("");
   const { size } = useThree();
   const fitScale = THREE.MathUtils.clamp(
-    (size.width / Math.max(1, size.height)) * 0.95,
-    0.55,
+    (size.width / Math.max(1, size.height)) * (size.width < 400 ? 1.1 : 0.95),
+    size.width < 400 ? 0.65 : 0.55,
     1
   );
 
@@ -459,6 +459,19 @@ function SceneContent({ onPhase }) {
   );
 }
 
+function ResponsiveCamera() {
+  const { camera, gl, size } = useThree();
+
+  useEffect(() => {
+    camera.position.set(6, 5, size.width < 400 ? 24 : 20);
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+    gl.domElement.style.touchAction = size.width < 640 ? "none" : "auto";
+  }, [camera, gl, size.width]);
+
+  return null;
+}
+
 /* shaft helper removed — rotation handled per part */
 /* ---------- Public component ---------- */
 const STATUS_STYLE = {
@@ -473,12 +486,13 @@ const EngineeringUniverse = () => {
   const style = STATUS_STYLE[phase] ?? STATUS_STYLE.ASSEMBLED;
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-x-0 bottom-0 top-[45%] lg:inset-0">
       <Canvas
         dpr={[1, 2]}
         camera={{ position: [6, 5, 20], fov: 42 }}
         gl={{ antialias: true, alpha: true }}
       >
+      <ResponsiveCamera />
       <ambientLight intensity={0.25} />
       <directionalLight position={[6, 10, 8]} intensity={1.4} />
       <directionalLight position={[-8, 4, -6]} intensity={0.5} />

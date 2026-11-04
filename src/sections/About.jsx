@@ -90,10 +90,12 @@ const About = () => {
         </Reveal>
 
         {/* Grid 3: Engineering Universe (3D gearbox) */}
-        <Reveal className="grid-black-color grid-3 relative overflow-hidden" delay={0.16} whileHover={{ y: -4 }}>
+        <Reveal className="grid-black-color grid-3 relative min-h-[34rem] overflow-hidden lg:min-h-0" delay={0.16} whileHover={{ y: -4 }}>
           <EngineeringUniverse />
-          <div className="z-10 absolute top-0 left-0 w-[55%] p-4 pointer-events-none">
-            <p className="headtext">ENGINEERING UNIVERSE</p>
+          <div className="z-10 absolute top-0 left-0 w-full p-4 pointer-events-none lg:w-[55%]">
+            <p className="headtext mt-0 mb-2 break-words text-[clamp(1rem,5vw,1.25rem)] leading-tight lg:mt-2 lg:mb-2 lg:text-xl">
+              ENGINEERING UNIVERSE
+            </p>
             <p className="subtext font-semibold text-neutral-200">
               Where Mechanical Design Meets Innovation
             </p>
