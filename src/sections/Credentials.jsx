@@ -305,7 +305,6 @@ const Credentials = () => {
           className="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-10 bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]"
         >
           Professional Certificates
-
         </Reveal>
         <div className="grid grid-cols-1 gap-5 px-4 md:grid-cols-2 lg:grid-cols-3">
           {certificateFolders.map((folder, index) => (
