@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import Card from "../components/Card";
-import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
 import Reveal from "../components/Reveal";
+import EngineeringUniverse from "../components/EngineeringUniverse";
 
 const About = () => {
   const grid2Container = useRef();
@@ -89,18 +89,19 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* Grid 3: Location / Globe */}
+        {/* Grid 3: Engineering Universe (3D gearbox) */}
         <Reveal className="grid-black-color grid-3 relative overflow-hidden" delay={0.16} whileHover={{ y: -4 }}>
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
-            <p className="subtext">
-              I am an Indian and I am highly open to remote design work,
-              internships, and collaborative engineering projects worldwide.
+          <EngineeringUniverse />
+          <div className="z-10 absolute top-0 left-0 w-[55%] p-4 pointer-events-none">
+            <p className="headtext">ENGINEERING UNIVERSE</p>
+            <p className="subtext font-semibold text-neutral-200">
+              Where Mechanical Design Meets Innovation
+            </p>
+            <p className="subtext mt-1">
+              Exploring mechanisms, engineering systems and the art of
+              transforming ideas into functional designs.
             </p>
           </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
         </Reveal>
 
         {/* Grid 4: Contact / CTA */}
