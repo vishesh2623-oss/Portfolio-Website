@@ -2,7 +2,7 @@ import { Frameworks } from "../components/Frameworks";
 import Reveal from "../components/Reveal";
 import EngineeringUniverse from "../components/EngineeringUniverse";
 import EngineeringToolkit from "../components/EngineeringToolkit";
-import CopyEmailButton from "../components/CopyEmailButton";
+import EngineeringTurbine from "../components/EngineeringTurbine";
 
 const About = () => {
 
@@ -77,14 +77,9 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* Grid 4: Contact / CTA */}
+        {/* Grid 4: Engineering the Possible (interactive gas turbine) */}
         <Reveal className="grid-special-color grid-4" delay={0.08} whileHover={{ y: -4 }}>
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Do you want to start a project together?
-            </p>
-            <CopyEmailButton />
-          </div>
+          <EngineeringTurbine />
         </Reveal>
 
         {/* Grid 5: Tech Stack */}
