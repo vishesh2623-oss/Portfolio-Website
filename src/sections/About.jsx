@@ -1,12 +1,10 @@
-import { useRef } from "react";
-import Card from "../components/Card";
-import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
 import Reveal from "../components/Reveal";
 import EngineeringUniverse from "../components/EngineeringUniverse";
+import EngineeringToolkit from "../components/EngineeringToolkit";
+import CopyEmailButton from "../components/CopyEmailButton";
 
 const About = () => {
-  const grid2Container = useRef();
 
   return (
     <section className="c-space section-spacing" id="about">
@@ -57,36 +55,9 @@ const About = () => {
           <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
         </Reveal>
 
-        {/* Grid 2: Engineering Software Cards */}
+        {/* Grid 2: My Engineering Toolkit */}
         <Reveal className="grid-default-color grid-2" delay={0.08} whileHover={{ y: -4 }}>
-          <div
-            ref={grid2Container}
-            className="flex items-center justify-center w-full h-full relative"
-          >
-            <p className="flex items-end text-5xl text-gray-500">
-              My Passion for Engineering
-            </p>
-            <Card
-              style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="SOLIDWORKS"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-              text="SOLID EDGE"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/soildworks.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/soildedge.webp"
-              containerRef={grid2Container}
-            />
-          </div>
+          <EngineeringToolkit />
         </Reveal>
 
         {/* Grid 3: Engineering Universe (3D gearbox) */}

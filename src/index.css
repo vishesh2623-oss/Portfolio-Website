@@ -130,7 +130,7 @@ html {
   @apply row-span-1 md:row-span-2 md:col-span-3 min-h-[40rem] md:min-h-[42rem] relative overflow-hidden hover:-translate-y-1 duration-200;
 }
 .grid-2 {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+  @apply row-span-1 md:col-span-3 h-[27rem] sm:h-[28rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
 }
 .grid-3 {
   @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
