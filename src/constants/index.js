@@ -64,6 +64,26 @@ export const myProjects = [
     ],
   },
   {
+    id: 14,
+    title: "Helicopter Rotor Mechanism",
+    description: "Designed functional CAD helicopter rotor mechanism.",
+    subDescription: [
+      "Controls blade pitch dynamically.",
+      "Features swashplate and linkages.",
+      "Modeled in SolidWorks environment.",
+    ],
+    href: "https://sketchfab.com/3d-models/helicopter-rotor-mechanism-28d8fe332c1945b1b139fba71a4e78de",
+    logo: "/assets/logos/soildworks.png",
+    image: "/assets/projects/heli.png",
+    tags: [
+      {
+        id: 1,
+        name: "SolidWorks",
+        path: "/assets/logos/soildworks.png",
+      }
+    ],
+  },
+  {
     id: 4,
     title: " 4-Cylinder Engine Assembly ",
     description:
