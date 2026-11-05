@@ -31,7 +31,7 @@ export const myProjects = [
       "Smart tactile learning technology.",
       "Gamified cultural heritage education.",
     ],
-    href: "https://sketchfab.com/3d-models/anvesha-07c2d11385944f5c8ac7f5743ff9575b",
+    href: "https://sketchfab.com/3d-models/anvesha-india-map-0a9c3b1206a9471f9fec7f298f5300a5",
     logo: "/assets/logos/jal2.svg",
     image: "/assets/projects/sihb.png",
     tags: [
