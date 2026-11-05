@@ -10,7 +10,7 @@ export const myProjects = [
       "Maximum space efficiency achieved.",
     ],
     href: "https://smart-water-quality-and-monitoring.vercel.app/",
-    cadHref: "https://sketchfab.com/3d-models/neerva-c69b9c280bb44dd6aff6447b45a2932f",
+    cadHref: "https://sketchfab.com/3d-models/neerva-filter-ccb6bb1c3655424c97c157f9450b72f9",
     logo: "/assets/logos/jallogo.svg",
     image: "/assets/projects/siha.png",
     tags: [
