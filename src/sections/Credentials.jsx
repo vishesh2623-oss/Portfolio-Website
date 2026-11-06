@@ -61,14 +61,27 @@ const otherCertificates = [
 const achievements = ["/assets/projects/psg.jpg", "/assets/projects/ideafest.png"];
 const internships = ["/assets/projects/intern.jpg"];
 
-const CertificateGrid = ({ title, images }) => (
+const headingClasses =
+  "text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]";
+
+const CertificateGrid = ({ title, images, stat }) => (
   <div className="mb-20">
-    <Reveal
-      as="h2"
-      className="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-10 bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]"
-    >
-      {title}
-    </Reveal>
+    {stat ? (
+      <Reveal
+        as="div"
+        className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 mb-10"
+      >
+        <h2 className={`${headingClasses} min-w-0`}>{title}</h2>
+        <span className={`${headingClasses} whitespace-nowrap`}>{stat}</span>
+      </Reveal>
+    ) : (
+      <Reveal
+        as="h2"
+        className={`${headingClasses} text-center mb-10`}
+      >
+        {title}
+      </Reveal>
+    )}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
       {images.map((src, index) => (
         <Reveal
@@ -320,7 +333,7 @@ const Credentials = () => {
 
       <CertificateGrid title="Other Certificates" images={otherCertificates} />
       <CertificateGrid title="Achievements & Hackathons" images={achievements} />
-      <CertificateGrid title="Internship Experience" images={internships} />
+      <CertificateGrid title="Internship Experience" images={internships} stat="TOTAL = 29 DAYS" />
 
       <AnimatePresence>
         {openFolder && (
