@@ -1,6 +1,6 @@
-import { Frameworks } from "../components/Frameworks";
 import Reveal from "../components/Reveal";
 import EngineeringUniverse from "../components/EngineeringUniverse";
+import EngineeringSoftware from "../components/EngineeringSoftware";
 import EngineeringToolkit from "../components/EngineeringToolkit";
 import EngineeringTurbine from "../components/EngineeringTurbine";
 
@@ -10,7 +10,7 @@ const About = () => {
     <section className="c-space section-spacing" id="about">
       <Reveal as="h2" className="text-heading">About Me</Reveal>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-14 md:auto-rows-[minmax(18rem,auto)] mt-12">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-14 md:gap-x-5 md:auto-rows-[minmax(18rem,auto)] mt-12">
         <Reveal className="flex items-start grid-default-color grid-1 relative overflow-hidden bg-black/80 rounded-2xl" whileHover={{ y: -4 }}>
           <div className="z-10 w-full p-2 sm:p-4">
             <p className="headtext text-center text-2xl font-semibold md:text-3xl">
@@ -82,24 +82,23 @@ const About = () => {
           <EngineeringTurbine />
         </Reveal>
 
-        {/* Grid 5: Engineering Software & Tools (text header on top, orbit wheel below) */}
-        <Reveal className="grid-default-color grid-5 relative flex flex-col overflow-hidden" delay={0.16} whileHover={{ y: -4 }}>
-          {/* AREA 1 — text header: static, above the wheel, wheel can never enter here */}
-          <div className="relative z-20 px-4 pt-2 sm:px-5 sm:pt-3">
-            <p className="headtext mt-1 mb-1">Engineering Software &amp; Tools</p>
-            <p className="subtext">
-             I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360 and Solid Edge.
+        {/* Grid 5: Engineering Software & Tools — categorised software dashboard */}
+        <Reveal
+          className="grid-5 relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-b from-storm to-indigo p-4 sm:p-5"
+          delay={0.16}
+          whileHover={{ y: -4 }}
+        >
+          <div className="relative z-10">
+            <p className="mt-0 mb-1 text-xl font-semibold tracking-tight">
+              Engineering Software &amp; Tools
+            </p>
+            <p className="subtext text-[13px] sm:text-sm">
+              I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360 and Solid Edge.
             </p>
           </div>
           {/* readability scrim behind the heading (same pattern as the toolkit tile) */}
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-black/55 to-transparent sm:h-28" />
-          {/* AREA 2 — rotating logo wheel: its own zone below the header, all orbit
-              content lives and rotates strictly inside this container */}
-          <div className="relative z-[5] mt-1 flex-1 min-h-[7rem] md:mt-0">
-            <div className="absolute inset-x-2 top-0 bottom-2 sm:inset-x-3 md:top-1 md:bottom-1">
-              <Frameworks />
-            </div>
-          </div>
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-0 h-16 bg-gradient-to-b from-black/45 to-transparent" />
+          <EngineeringSoftware />
         </Reveal>
       </div>
     </section>
