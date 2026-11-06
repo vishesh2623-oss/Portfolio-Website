@@ -2,7 +2,6 @@ import Reveal from "../components/Reveal";
 import EngineeringUniverse from "../components/EngineeringUniverse";
 import EngineeringSoftware from "../components/EngineeringSoftware";
 import EngineeringToolkit from "../components/EngineeringToolkit";
-import EngineeringTurbine from "../components/EngineeringTurbine";
 
 const About = () => {
 
@@ -77,27 +76,12 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* Grid 4: Engineering the Possible (interactive gas turbine) */}
-        <Reveal className="grid-special-color grid-4" delay={0.08} whileHover={{ y: -4 }}>
-          <EngineeringTurbine />
-        </Reveal>
-
-        {/* Grid 5: Engineering Software & Tools — categorised software dashboard */}
+        {/* Grid 5: Engineering Software & Tools — full-width orbital showcase */}
         <Reveal
-          className="grid-5 relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-b from-storm to-indigo p-4 sm:p-5"
+          className="grid-5 relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-b from-storm to-indigo p-4 sm:p-5 md:flex-row md:items-stretch md:gap-6 lg:p-6"
           delay={0.16}
           whileHover={{ y: -4 }}
         >
-          <div className="relative z-10">
-            <p className="mt-0 mb-1 text-xl font-semibold tracking-tight">
-              Engineering Software &amp; Tools
-            </p>
-            <p className="subtext text-[13px] sm:text-sm">
-              I specialize in 3D CAD modeling and physical simulations using SolidWorks, Fusion 360 and Solid Edge.
-            </p>
-          </div>
-          {/* readability scrim behind the heading (same pattern as the toolkit tile) */}
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-0 h-16 bg-gradient-to-b from-black/45 to-transparent" />
           <EngineeringSoftware />
         </Reveal>
       </div>
