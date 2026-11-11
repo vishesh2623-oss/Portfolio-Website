@@ -218,7 +218,10 @@ const CertificateModal = ({ folder, onClose, shouldReduceMotion }) => {
           </button>
         </header>
 
-        <div className="grid min-h-0 flex-1 grid-cols-1 gap-5 overflow-y-auto p-4 sm:p-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)]">
+        <div
+          data-lenis-prevent
+          className="grid min-h-0 flex-1 grid-cols-1 gap-5 overflow-y-auto p-4 sm:p-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)]"
+        >
           <section aria-label="Specialization certificate" className="min-w-0">
             <h4 className="mb-3 text-base font-semibold text-neutral-100">
               Specialization Certificate
