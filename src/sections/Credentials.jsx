@@ -45,6 +45,8 @@ const certificateFolders = [
 ];
 
 const otherCertificates = [
+  "/assets/projects/xdesign.jpg",
+  "/assets/projects/additive.jpg",
   "/assets/projects/ai everyone.jpg",
   "/assets/projects/ai data analysis.jpg",
   "/assets/projects/intro to python.jpg",
@@ -60,6 +62,17 @@ const otherCertificates = [
 
 const achievements = ["/assets/projects/psg.jpg", "/assets/projects/ideafest.png"];
 const internships = ["/assets/projects/intern.jpg"];
+
+const solidworksBadges = [
+  {
+    title: "SOLIDWORKS xDesign",
+    image: "/assets/projects/Soliworks xdesign.png",
+  },
+  {
+    title: "SOLIDWORKS Additive",
+    image: "/assets/projects/Solidworks Additive.png",
+  },
+];
 
 const headingClasses =
   "text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]";
@@ -327,6 +340,37 @@ const Credentials = () => {
               index={index}
               onOpen={openCertificateFolder}
             />
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-20">
+        <Reveal
+          as="h2"
+          className={`${headingClasses} text-center mb-10`}
+        >
+          SOLIDWORKS BADGES
+        </Reveal>
+        <div className="grid grid-cols-1 gap-5 px-4 sm:grid-cols-2 lg:grid-cols-6">
+          {solidworksBadges.map((badge, index) => (
+            <Reveal
+              key={badge.title}
+              delay={index * 0.08}
+              className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-neutral-950/80 shadow-[0_0_20px_rgba(0,0,0,0.6)] transition-colors duration-300 hover:border-green-500/30 lg:col-span-2 ${
+                index === 0 ? "lg:col-start-2" : "lg:col-start-4"
+              }`}
+            >
+              <div className="flex flex-1 items-center justify-center p-5 sm:p-8">
+                <img
+                  src={badge.image}
+                  alt={`${badge.title} badge`}
+                  className="aspect-square w-full max-w-80 object-contain"
+                />
+              </div>
+              <h3 className="border-t border-white/10 px-4 py-4 text-center text-lg font-semibold text-neutral-100">
+                {badge.title}
+              </h3>
+            </Reveal>
           ))}
         </div>
       </div>
