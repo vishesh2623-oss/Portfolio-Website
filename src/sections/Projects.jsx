@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Project from "../components/Project";
 import { myProjects } from "../constants";
 import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
 import Reveal from "../components/Reveal";
 import ProjectDetails from "../components/ProjectDetails";
 
@@ -12,6 +13,7 @@ const Projects = ({
   onBackToProjects,
 }) => {
   const shouldReduceMotion = useReducedMotion();
+  const projectsRef = useRef(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { damping: 10, stiffness: 50 });
@@ -21,8 +23,42 @@ const Projects = ({
     y.set(e.clientY + 20);
   };
   const [preview, setPreview] = useState(null);
+
+  useGSAP((_, contextSafe) => {
+    if (shouldReduceMotion || selectedProject) return;
+
+    const cards = gsap.utils.toArray(
+      ".project-card-content",
+      projectsRef.current
+    );
+
+    ScrollTrigger.batch(cards, {
+      start: "top 88%",
+      once: true,
+      onEnter: contextSafe((batch) => {
+        gsap.fromTo(
+          batch,
+          { autoAlpha: 0, y: 16 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.12,
+            ease: "power2.out",
+            overwrite: true,
+          }
+        );
+      }),
+    });
+  }, {
+    scope: projectsRef,
+    dependencies: [selectedProject, shouldReduceMotion],
+    revertOnUpdate: true,
+  });
+
   return (
     <section
+      ref={projectsRef}
       onMouseMove={handleMouseMove}
       className="relative c-space section-spacing"
     >

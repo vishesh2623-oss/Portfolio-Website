@@ -4,6 +4,7 @@ import './index.css'
 import 'lenis/dist/lenis.css'
 import { ReactLenis } from 'lenis/react'
 import App from './App.jsx'
+import LenisScrollTriggerSync from './components/LenisScrollTriggerSync.jsx'
 
 const lenisOptions = {
   autoRaf: true,
@@ -16,6 +17,7 @@ const lenisOptions = {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ReactLenis root options={lenisOptions}>
+      <LenisScrollTriggerSync />
       <App />
     </ReactLenis>
   </StrictMode>,

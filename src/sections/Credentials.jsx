@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
 import Reveal from "../components/Reveal";
 
 const certificateFolders = [
@@ -77,67 +78,125 @@ const solidworksBadges = [
 const headingClasses =
   "text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]";
 
-const CertificateGrid = ({ title, images, stat }) => (
-  <div className="mb-20">
-    {stat ? (
-      <Reveal
-        as="div"
-        className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 mb-10"
-      >
-        <h2 className={`${headingClasses} min-w-0`}>{title}</h2>
-        <span className={`${headingClasses} whitespace-nowrap`}>{stat}</span>
-      </Reveal>
-    ) : (
-      <Reveal
-        as="h2"
-        className={`${headingClasses} text-center mb-10`}
-      >
-        {title}
-      </Reveal>
-    )}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-      {images.map((src, index) => (
-        <Reveal
-          key={`${title}-${index}`}
-          className="group overflow-hidden rounded-2xl border border-white/10 bg-neutral-950/80 shadow-[0_0_20px_rgba(0,0,0,0.6)] hover:border-green-500/30 transition-all duration-300"
-          delay={Math.min(index * 0.05, 0.3)}
-        >
-          <img
-            src={src}
-            alt={`${title} document ${index + 1}`}
-            className="w-full h-auto object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105"
-          />
-        </Reveal>
-      ))}
-    </div>
-  </div>
-);
+const CertificateGrid = ({ title, images, stat, gsapReveal = false }) => {
+  const containerRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
-const CertificateFolder = ({ folder, onOpen, index }) => (
-  <Reveal delay={index * 0.08}>
-    <button
-      type="button"
-      onClick={(event) => onOpen(folder, event.currentTarget)}
-      className="group flex min-h-40 w-full flex-col items-start justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-storm/80 to-indigo/80 p-6 text-left shadow-[0_0_20px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:border-sand/50 hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-      aria-haspopup="dialog"
-    >
-      <div className="flex w-full items-start justify-between">
-        <img
-          src={folder.logo}
-          alt=""
-          aria-hidden="true"
-          className="h-10 w-12 object-contain transition-transform duration-300 group-hover:-translate-y-1"
-        />
-        <span className="text-sm text-neutral-400">
-          {folder.certificates.length + 1} certificates
-        </span>
+  useGSAP((_, contextSafe) => {
+    if (!gsapReveal || shouldReduceMotion) return;
+
+    const entries = gsap.utils.toArray(
+      "[data-internship-entry]",
+      containerRef.current
+    );
+
+    if (!entries.length) return;
+
+    ScrollTrigger.batch(entries, {
+      start: "top 88%",
+      once: true,
+      onEnter: contextSafe((batch) => {
+        gsap.fromTo(
+          batch,
+          { autoAlpha: 0, y: 16 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.12,
+            ease: "power2.out",
+            overwrite: true,
+          }
+        );
+      }),
+    });
+  }, {
+    scope: containerRef,
+    dependencies: [gsapReveal, shouldReduceMotion],
+    revertOnUpdate: true,
+  });
+
+  return (
+    <div ref={containerRef} className="mb-20">
+      {stat ? (
+        gsapReveal ? (
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 mb-10">
+            <h2 className={`${headingClasses} min-w-0`}>{title}</h2>
+            <span className={`${headingClasses} whitespace-nowrap`}>{stat}</span>
+          </div>
+        ) : (
+          <Reveal
+            as="div"
+            className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 mb-10"
+          >
+            <h2 className={`${headingClasses} min-w-0`}>{title}</h2>
+            <span className={`${headingClasses} whitespace-nowrap`}>{stat}</span>
+          </Reveal>
+        )
+      ) : (
+        <Reveal
+          as="h2"
+          className={`${headingClasses} text-center mb-10`}
+        >
+          {title}
+        </Reveal>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        {images.map((src, index) => {
+          const CertificateCard = gsapReveal ? "div" : Reveal;
+
+          return (
+            <CertificateCard
+              key={`${title}-${index}`}
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-neutral-950/80 shadow-[0_0_20px_rgba(0,0,0,0.6)] hover:border-green-500/30 transition-all duration-300"
+              delay={gsapReveal ? undefined : Math.min(index * 0.05, 0.3)}
+              data-internship-entry={gsapReveal ? "" : undefined}
+            >
+              <img
+                src={src}
+                alt={`${title} document ${index + 1}`}
+                className="w-full h-auto object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105"
+              />
+            </CertificateCard>
+          );
+        })}
       </div>
-      <span className="mt-6 text-lg font-semibold text-neutral-100">
-        {folder.title}
-      </span>
-    </button>
-  </Reveal>
-);
+    </div>
+  );
+};
+
+const CertificateFolder = ({ folder, onOpen, index, gsapReveal = false }) => {
+  const FolderContainer = gsapReveal ? "div" : Reveal;
+
+  return (
+    <FolderContainer
+      data-professional-certificate={gsapReveal ? "" : undefined}
+      delay={gsapReveal ? undefined : index * 0.08}
+    >
+      <button
+        type="button"
+        onClick={(event) => onOpen(folder, event.currentTarget)}
+        className="group flex min-h-40 w-full flex-col items-start justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-storm/80 to-indigo/80 p-6 text-left shadow-[0_0_20px_rgba(0,0,0,0.35)] transition duration-300 hover:-translate-y-1 hover:border-sand/50 hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+        aria-haspopup="dialog"
+      >
+        <div className="flex w-full items-start justify-between">
+          <img
+            src={folder.logo}
+            alt=""
+            aria-hidden="true"
+            className="h-10 w-12 object-contain transition-transform duration-300 group-hover:-translate-y-1"
+          />
+          <span className="text-sm text-neutral-400">
+            {folder.certificates.length + 1} certificates
+          </span>
+        </div>
+        <span className="mt-6 text-lg font-semibold text-neutral-100">
+          {folder.title}
+        </span>
+      </button>
+    </FolderContainer>
+  );
+};
 
 const CertificateModal = ({ folder, onClose, shouldReduceMotion }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -304,7 +363,40 @@ const CertificateModal = ({ folder, onClose, shouldReduceMotion }) => {
 const Credentials = () => {
   const [openFolder, setOpenFolder] = useState(null);
   const triggerRef = useRef(null);
+  const certificateSectionRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
+
+  useGSAP((_, contextSafe) => {
+    if (shouldReduceMotion) return;
+
+    const cards = gsap.utils.toArray(
+      "[data-professional-certificate]",
+      certificateSectionRef.current
+    );
+
+    ScrollTrigger.batch(cards, {
+      start: "top 88%",
+      once: true,
+      onEnter: contextSafe((batch) => {
+        gsap.fromTo(
+          batch,
+          { autoAlpha: 0, y: 16 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.12,
+            ease: "power2.out",
+            overwrite: true,
+          }
+        );
+      }),
+    });
+  }, {
+    scope: certificateSectionRef,
+    dependencies: [shouldReduceMotion],
+    revertOnUpdate: true,
+  });
 
   useEffect(() => {
     if (!openFolder) return undefined;
@@ -327,7 +419,7 @@ const Credentials = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-20" id="credentials">
+    <section ref={certificateSectionRef} className="max-w-7xl mx-auto py-20" id="credentials">
       <div className="mb-20">
         <Reveal
           as="h2"
@@ -342,6 +434,7 @@ const Credentials = () => {
               folder={folder}
               index={index}
               onOpen={openCertificateFolder}
+              gsapReveal
             />
           ))}
         </div>
@@ -380,7 +473,12 @@ const Credentials = () => {
 
       <CertificateGrid title="Other Certificates" images={otherCertificates} />
       <CertificateGrid title="Achievements & Hackathons" images={achievements} />
-      <CertificateGrid title="Internship Experience" images={internships} stat="TOTAL = 29 DAYS" />
+      <CertificateGrid
+        title="Internship Experience"
+        images={internships}
+        stat="TOTAL = 29 DAYS"
+        gsapReveal
+      />
 
       <AnimatePresence>
         {openFolder && (
