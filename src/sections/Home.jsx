@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Magnet from "../components/Magnet";
 
 const mainWords = ["Innovative", "Analytical", "Driven"];
 
@@ -33,7 +34,7 @@ const Home = () => {
           
           {/* Main Name Heading */}
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
-            Hi, I'm <span className="text-blue-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)]">Vishesh R S</span>
+            Hi, I&apos;m <span className="text-blue-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)]">Vishesh R S</span>
           </h1>
 
           {/* Video-style 3-Tier Animated Text Block */}
@@ -64,18 +65,22 @@ const Home = () => {
 
           {/* Action Buttons */}
           <div className="pt-2 flex flex-wrap gap-4 items-center">
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow-lg shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-3 border border-white/20 hover:border-white/60 hover:bg-white/5 text-white font-medium rounded-lg transition-all duration-300"
-            >
-              Get In Touch
-            </a>
+            <Magnet maxOffset={6} innerClassName="inline-flex">
+              <a
+                href="#projects"
+                className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow-lg shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5"
+              >
+                View Projects
+              </a>
+            </Magnet>
+            <Magnet maxOffset={6} innerClassName="inline-flex">
+              <a
+                href="#contact"
+                className="px-8 py-3 border border-white/20 hover:border-white/60 hover:bg-white/5 text-white font-medium rounded-lg transition-all duration-300"
+              >
+                Get In Touch
+              </a>
+            </Magnet>
           </div>
 
         </div>
