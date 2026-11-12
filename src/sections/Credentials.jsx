@@ -58,11 +58,10 @@ const otherCertificates = [
   "/assets/projects/nptel.jpg",
   "/assets/projects/claude.jpg",
   "/assets/projects/drug-pledge.jpg",
-  "/assets/projects/janatics.jpg",
   "/assets/projects/auton.jpg",
 ];
 
-const achievements = ["/assets/projects/psg.jpg", "/assets/projects/ideafest.png"];
+const achievements = ["/assets/projects/psg.jpg", "/assets/projects/ideafest.png", "/assets/projects/janatics.jpg"];
 const internships = ["/assets/projects/intern.jpg"];
 
 const solidworksBadges = [
