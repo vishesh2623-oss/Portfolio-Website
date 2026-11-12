@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useReducedMotion } from "motion/react";
-import { gsap, useGSAP } from "../lib/gsap";
 import EngineeringJourneyScene from "./EngineeringJourneyScene";
 import Reveal from "./Reveal";
 
@@ -19,7 +18,7 @@ function MilestoneInfo({
       id={id}
       data-journey-info
       data-journey-index={index}
-      className={`min-w-0 border-l pl-5 transition-colors duration-500 md:pl-7 ${
+      className={`engineering-journey__milestone min-w-0 border-l pl-5 transition-colors duration-500 md:pl-7 ${
         active ? "border-cyan-200/65" : "border-cyan-200/20"
       }`}
       onPointerEnter={() => setHoveredIndex(index)}
@@ -51,6 +50,9 @@ function MilestoneInfo({
         </button>
 
         <div className="min-w-0 flex-1">
+          <span className="engineering-journey__eyebrow">
+            JOURNEY {String(index + 1).padStart(2, "0")}
+          </span>
           <header className="mb-4 space-y-2">
             <h3 className="text-2xl font-bold text-neutral-300 md:text-4xl">
               {item.date}
@@ -80,136 +82,18 @@ function MilestoneInfo({
 
 export const Timeline = ({ data }) => {
   const shouldReduceMotion = useReducedMotion();
-  const containerRef = useRef(null);
-  const progressRef = useRef({ value: 0 });
-  const entryRef = useRef({ value: 0 });
-  const highlightedRef = useRef(null);
-  const [sceneActive, setSceneActive] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const highlightedIndex = hoveredIndex ?? selectedIndex;
-  highlightedRef.current = highlightedIndex;
-
-  useGSAP(
-    (_, contextSafe) => {
-      const root = containerRef.current;
-      if (!root) return;
-
-      const info = gsap.utils.toArray("[data-journey-info]", root);
-      const paragraphs = info.flatMap((block) =>
-        [...block.querySelectorAll("p")]
-      );
-      progressRef.current.value = shouldReduceMotion ? 0.5 : 0;
-      entryRef.current.value = shouldReduceMotion ? 1 : 0;
-
-      if (shouldReduceMotion) {
-        gsap.set([...info, ...paragraphs], { autoAlpha: 1, y: 0 });
-        setSceneActive(false);
-        return;
-      }
-
-      gsap.set(info, { autoAlpha: 0, y: 20 });
-      gsap.set(paragraphs, { autoAlpha: 0, y: 8 });
-
-      const entrance = gsap.timeline({ paused: true });
-      entrance.to(
-        entryRef.current,
-        { value: 1, duration: 1.5, ease: "power2.inOut" },
-        0
-      );
-
-      let hasEntered = false;
-      const enterScene = contextSafe(() => {
-        setSceneActive(true);
-        if (!hasEntered) {
-          hasEntered = true;
-          entrance.play(0);
-        }
-      });
-      const leaveScene = contextSafe(() => setSceneActive(false));
-      const journey = gsap.timeline({
-        scrollTrigger: {
-          trigger: root,
-          start: "top 82%",
-          end: "bottom 18%",
-          scrub: 0.55,
-          onEnter: enterScene,
-          onEnterBack: enterScene,
-          onLeave: leaveScene,
-          onLeaveBack: leaveScene,
-        },
-      });
-
-      journey.to(progressRef.current, {
-        value: 1,
-        duration: 1,
-        ease: "none",
-      });
-
-      data.forEach((_, index) => {
-        const block = info.find(
-          (element) => Number(element.dataset.journeyIndex) === index
-        );
-        if (!block) return;
-
-        const blockParagraphs = [...block.querySelectorAll("p")];
-        const start =
-          data.length > 1 ? 0.12 + (index / (data.length - 1)) * 0.46 : 0.18;
-        journey.fromTo(
-          block,
-          { autoAlpha: 0, y: 20 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.18,
-            ease: "power2.out",
-            immediateRender: false,
-          },
-          start
-        );
-        journey.fromTo(
-          blockParagraphs,
-          { autoAlpha: 0, y: 8 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.14,
-            stagger: 0.025,
-            ease: "power2.out",
-            immediateRender: false,
-          },
-          start + 0.04
-        );
-      });
-    },
-    {
-      scope: containerRef,
-      dependencies: [data.length, shouldReduceMotion],
-      revertOnUpdate: true,
-    }
-  );
 
   return (
-    <div className="c-space section-spacing" ref={containerRef}>
+    <div className="c-space section-spacing" id="engineering-journey">
       <Reveal as="h2" className="text-heading">
         My Engineering Journey
       </Reveal>
 
-      <div
-        className="relative mt-8 h-[17rem] overflow-hidden sm:h-[19rem] md:mt-10 md:h-[25rem]"
-        data-journey-stage
-      >
-        <EngineeringJourneyScene
-          active={sceneActive}
-          entryRef={entryRef}
-          highlightedRef={highlightedRef}
-          milestoneCount={data.length}
-          progressRef={progressRef}
-          reducedMotion={shouldReduceMotion}
-        />
-      </div>
-
-      <div className="mt-8 grid gap-10 md:grid-cols-2 md:gap-8">
+      <div className="engineering-journey__layout" data-journey-layout>
+        <EngineeringJourneyScene reducedMotion={shouldReduceMotion} />
         {data.map((item, index) => {
           const selected = selectedIndex === index;
           const active = highlightedIndex === index || selected;

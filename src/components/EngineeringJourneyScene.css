@@ -1,0 +1,489 @@
+.engineering-journey__layout {
+  position: relative;
+  isolation: isolate;
+  min-height: 1360px;
+  margin-top: 2rem;
+}
+
+.engineering-journey__scene {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.engineering-journey__route {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.engineering-journey__route--mobile {
+  display: none;
+}
+
+.engineering-journey__milestone {
+  position: absolute;
+  z-index: 1;
+  width: 47%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  scroll-margin-top: 7rem;
+}
+
+.engineering-journey__milestone[data-journey-index="0"] {
+  top: 0;
+  left: 0;
+}
+
+.engineering-journey__milestone[data-journey-index="1"] {
+  top: 970px;
+  right: 0;
+}
+
+.engineering-journey__eyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: rgb(103 232 249 / 62%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.journey-route__rail,
+.journey-route__draw,
+.journey-route__flow,
+.journey-route__detail {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.journey-route__rail--wide {
+  stroke: #67e8f9;
+  stroke-width: 24;
+  opacity: 0.045;
+  filter: blur(7px);
+}
+
+.journey-route__rail--base {
+  stroke: #52bde9;
+  stroke-width: 7;
+  opacity: 0.22;
+}
+
+.journey-route__rail--fine {
+  stroke: #9c9afa;
+  stroke-width: 1;
+  stroke-dasharray: 1 5;
+  opacity: 0.72;
+}
+
+.journey-route__draw {
+  stroke: url(#journey-route-desktop-gradient);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px rgb(103 232 249 / 78%));
+}
+
+.engineering-journey__route--mobile .journey-route__draw {
+  stroke: url(#journey-route-mobile-gradient);
+}
+
+.journey-route__flow {
+  stroke: #e0fbff;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1 16;
+  opacity: 0.86;
+  filter: drop-shadow(0 0 4px #67e8f9);
+  animation: journey-energy-flow 1.45s linear infinite;
+}
+
+.journey-route__detail {
+  stroke: #61d9f6;
+  stroke-width: 0.8;
+  stroke-dasharray: 3 8;
+  opacity: 0.32;
+}
+
+.journey-route__detail--purple {
+  stroke: #a78bfa;
+  stroke-dasharray: 1 12;
+  opacity: 0.5;
+}
+
+.journey-route__marker {
+  color: #b7f6ff;
+}
+
+.journey-route__marker-ring {
+  fill: #071520;
+  stroke: #80e9fb;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.journey-route__marker-core {
+  fill: #e2fbff;
+  filter: drop-shadow(0 0 4px #67e8f9);
+}
+
+.journey-route__marker--end .journey-route__marker-ring {
+  stroke: #b3a5ff;
+}
+
+.journey-route__calibration {
+  fill: none;
+  stroke: #8deafa;
+  stroke-width: 0.8;
+  opacity: 0.52;
+  vector-effect: non-scaling-stroke;
+}
+
+.journey-route__calibration-core {
+  fill: #c6f7ff;
+  stroke: none;
+}
+
+.journey-route__particle {
+  fill: #d7fbff;
+  filter: drop-shadow(0 0 4px #67e8f9);
+}
+
+.journey-route__particle--violet {
+  fill: #c4b5fd;
+  filter: drop-shadow(0 0 4px #a78bfa);
+}
+
+.journey-runner {
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgb(103 232 249 / 72%));
+}
+
+.journey-runner__trail {
+  fill: none;
+  stroke: #7cecff;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0.72;
+  animation: journey-trail-pulse 0.42s ease-in-out infinite alternate;
+}
+
+.journey-runner__trail--fine {
+  stroke: #b5a5ff;
+  stroke-width: 1;
+  opacity: 0.56;
+  animation-delay: -0.2s;
+}
+
+.journey-runner__contact {
+  fill: #67e8f9;
+  opacity: 0.24;
+  filter: blur(2px);
+  animation: journey-contact-pulse 0.42s ease-in-out infinite alternate;
+}
+
+.journey-runner__body {
+  transform-box: view-box;
+  transform-origin: 0 -25px;
+  animation: journey-runner-bob 0.42s ease-in-out infinite;
+}
+
+.journey-runner__torso,
+.journey-runner__arm path,
+.journey-runner__forearm path,
+.journey-runner__leg path,
+.journey-runner__shin path {
+  fill: none;
+  stroke: #d8f8ff;
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.journey-runner__torso {
+  stroke: #e7fbff;
+  stroke-width: 5.2;
+}
+
+.journey-runner__torso-glow {
+  fill: none;
+  stroke: #59dbfa;
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0.32;
+}
+
+.journey-runner__torso-detail {
+  fill: none;
+  stroke: #69def7;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.journey-runner__head {
+  fill: #e2fbff;
+  stroke: #72e3f7;
+  stroke-width: 1.5;
+}
+
+.journey-runner__arm,
+.journey-runner__forearm,
+.journey-runner__leg,
+.journey-runner__shin {
+  transform-box: fill-box;
+}
+
+.journey-runner__arm--rear {
+  transform-origin: 100% 0%;
+  animation: journey-arm-rear 0.42s ease-in-out infinite;
+}
+
+.journey-runner__arm--front {
+  transform-origin: 0% 0%;
+  animation: journey-arm-front 0.42s ease-in-out infinite;
+}
+
+.journey-runner__forearm--rear {
+  transform-origin: 100% 100%;
+  animation: journey-forearm-rear 0.42s ease-in-out infinite;
+}
+
+.journey-runner__forearm--front {
+  transform-origin: 0% 0%;
+  animation: journey-forearm-front 0.42s ease-in-out infinite;
+}
+
+.journey-runner__leg--rear {
+  transform-origin: 100% 0%;
+  animation: journey-leg-rear 0.42s ease-in-out infinite;
+}
+
+.journey-runner__leg--front {
+  transform-origin: 0% 0%;
+  animation: journey-leg-front 0.42s ease-in-out infinite;
+}
+
+.journey-runner__shin--rear {
+  transform-origin: 100% 0%;
+  animation: journey-shin-rear 0.42s ease-in-out infinite;
+}
+
+.journey-runner__shin--front {
+  transform-origin: 0% 0%;
+  animation: journey-shin-front 0.42s ease-in-out infinite;
+}
+
+.journey-runner__leg circle {
+  fill: #baf5ff;
+}
+
+@keyframes journey-energy-flow {
+  to {
+    stroke-dashoffset: -34;
+  }
+}
+
+@keyframes journey-trail-pulse {
+  to {
+    opacity: 0.24;
+  }
+}
+
+@keyframes journey-contact-pulse {
+  to {
+    opacity: 0.48;
+    transform: scaleX(0.72);
+  }
+}
+
+@keyframes journey-runner-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes journey-arm-rear {
+  0%,
+  100% {
+    transform: rotate(28deg);
+  }
+  50% {
+    transform: rotate(-24deg);
+  }
+}
+
+@keyframes journey-arm-front {
+  0%,
+  100% {
+    transform: rotate(-24deg);
+  }
+  50% {
+    transform: rotate(28deg);
+  }
+}
+
+@keyframes journey-forearm-rear {
+  0%,
+  100% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(19deg);
+  }
+}
+
+@keyframes journey-forearm-front {
+  0%,
+  100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes journey-leg-rear {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-36deg);
+  }
+}
+
+@keyframes journey-leg-front {
+  0%,
+  100% {
+    transform: rotate(-36deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes journey-shin-rear {
+  0%,
+  100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes journey-shin-front {
+  0%,
+  100% {
+    transform: rotate(38deg);
+  }
+  50% {
+    transform: rotate(-34deg);
+  }
+}
+
+@media (max-width: 899px) {
+  .engineering-journey__layout {
+    display: grid;
+    grid-template-areas:
+      "first"
+      "route"
+      "second";
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    min-height: 0;
+    margin-top: 2rem;
+  }
+
+  .engineering-journey__scene {
+    position: relative;
+    inset: auto;
+    grid-area: route;
+    height: auto;
+    aspect-ratio: 360 / 250;
+    overflow: visible;
+  }
+
+  .engineering-journey__route {
+    display: none;
+    height: auto;
+    aspect-ratio: 360 / 250;
+  }
+
+  .engineering-journey__route--mobile {
+    display: block;
+  }
+
+  .engineering-journey__milestone {
+    position: relative;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .engineering-journey__milestone[data-journey-index] {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .engineering-journey__milestone[data-journey-index="0"] {
+    grid-area: first;
+  }
+
+  .engineering-journey__milestone[data-journey-index="1"] {
+    grid-area: second;
+  }
+
+  .journey-route__rail--wide {
+    stroke-width: 16;
+    filter: blur(4px);
+  }
+
+  .journey-route__flow {
+    stroke-width: 1.1;
+  }
+
+  .journey-route__calibration {
+    opacity: 0.4;
+  }
+
+  .journey-route__particle:nth-of-type(2) {
+    display: none;
+  }
+}
+
+.engineering-journey__scene[data-reduced-motion="true"] .journey-route__flow {
+  animation: none;
+}
+
+.engineering-journey__scene[data-reduced-motion="true"] .journey-route__particle,
+.engineering-journey__scene[data-reduced-motion="true"] svg animateMotion {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-runner__body,
+  .journey-runner__arm,
+  .journey-runner__forearm,
+  .journey-runner__leg,
+  .journey-runner__shin,
+  .journey-runner__trail,
+  .journey-runner__contact,
+  .journey-route__flow {
+    animation: none !important;
+  }
+
+  .journey-route__particle,
+  svg animateMotion {
+    display: none;
+  }
+}
