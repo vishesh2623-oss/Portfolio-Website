@@ -49,6 +49,7 @@ const certificateFolders = [
 const otherCertificates = [
   "/assets/projects/xdesign.jpg",
   "/assets/projects/additive.jpg",
+  "/assets/projects/xshape.jpg",
   "/assets/projects/ai everyone.jpg",
   "/assets/projects/ai data analysis.jpg",
   "/assets/projects/intro to python.jpg",
@@ -72,6 +73,10 @@ const solidworksBadges = [
   {
     title: "SOLIDWORKS Additive",
     image: "/assets/projects/Solidworks Additive.png",
+  },
+  {
+    title: "SOLIDWORKS xShape",
+    image: "/assets/projects/Solidworks xshape.png",
   },
 ];
 
@@ -454,23 +459,21 @@ const Credentials = () => {
         >
           SOLIDWORKS BADGES
         </Reveal>
-        <div className="grid grid-cols-1 gap-5 px-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-3 gap-2 px-1 sm:gap-5 sm:px-4">
           {solidworksBadges.map((badge, index) => (
             <Reveal
               key={badge.title}
               delay={index * 0.08}
-              className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-neutral-950/80 shadow-[0_0_20px_rgba(0,0,0,0.6)] transition-colors duration-300 hover:border-green-500/30 lg:col-span-2 ${
-                index === 0 ? "lg:col-start-2" : "lg:col-start-4"
-              }`}
+              className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-neutral-950/80 shadow-[0_0_20px_rgba(0,0,0,0.6)] transition-colors duration-300 hover:border-green-500/30"
             >
-              <div className="flex flex-1 items-center justify-center p-5 sm:p-8">
+              <div className="flex flex-1 items-center justify-center p-2 sm:p-4 md:p-5">
                 <img
                   src={badge.image}
                   alt={`${badge.title} badge`}
-                  className="aspect-square w-full max-w-80 object-contain"
+                  className="aspect-square w-full max-w-56 object-contain"
                 />
               </div>
-              <h3 className="border-t border-white/10 px-4 py-4 text-center text-lg font-semibold text-neutral-100">
+              <h3 className="break-words border-t border-white/10 px-1 py-3 text-center text-[10px] font-semibold leading-tight text-neutral-100 min-[360px]:text-xs min-[400px]:text-sm sm:px-4 sm:text-lg">
                 {badge.title}
               </h3>
             </Reveal>
