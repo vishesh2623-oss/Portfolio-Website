@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
 import Reveal from "../components/Reveal";
+import StatsStrip from "../components/StatsStrip";
 
 const certificateFolders = [
   {
@@ -78,7 +79,13 @@ const solidworksBadges = [
 const headingClasses =
   "text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]";
 
-const CertificateGrid = ({ title, images, stat, gsapReveal = false }) => {
+const CertificateGrid = ({
+  title,
+  images,
+  stat,
+  gsapReveal = false,
+  statisticsStrip = false,
+}) => {
   const containerRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
 
@@ -161,6 +168,7 @@ const CertificateGrid = ({ title, images, stat, gsapReveal = false }) => {
           );
         })}
       </div>
+      {statisticsStrip && <StatsStrip />}
     </div>
   );
 };
@@ -478,6 +486,7 @@ const Credentials = () => {
         images={internships}
         stat="TOTAL = 29 DAYS"
         gsapReveal
+        statisticsStrip
       />
 
       <AnimatePresence>
