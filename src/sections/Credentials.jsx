@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
 import Reveal from "../components/Reveal";
 import StatsStrip from "../components/StatsStrip";
+import EngineeringSkillsGraph from "../components/EngineeringSkillsGraph";
 
 const certificateFolders = [
   {
@@ -172,7 +173,12 @@ const CertificateGrid = ({
           );
         })}
       </div>
-      {statisticsStrip && <StatsStrip />}
+      {statisticsStrip && (
+        <>
+          <StatsStrip />
+          <EngineeringSkillsGraph />
+        </>
+      )}
     </div>
   );
 };
